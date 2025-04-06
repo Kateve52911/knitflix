@@ -1,6 +1,6 @@
 const btn = document.querySelector("#menu-btn");
-const menus = document.querySelector("#mobile-menu");
+const menu = document.querySelector("#mobile-menu");
 
 btn.addEventListener("click", () => {
-  menus.classList.toggle("hidden");
+  menu.classList.toggle("hidden");
 });
