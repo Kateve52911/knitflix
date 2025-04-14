@@ -3,6 +3,7 @@ export const users = [
     id: 1,
     name: "Mark McTavish",
     username: "KnitKing",
+    password: "flowerpower",
     email: "mark.mctavish@email.com",
     description:
       "Mark here! I tackle complex patterns like a champ and always have at least five projects going. If you love fine wool and detailed stitches, let’s connect!",
@@ -17,6 +18,7 @@ export const users = [
     id: 2,
     name: "Jake Dustin",
     username: "PurlDude",
+    password: "yarnforlife",
     email: "jakers@email.com",
     description:
       "Hey, I’m Jake! Knitting is my way to chill—simple patterns, good vibes, and always a show playing in the background. Let’s keep it casual and creative!",
@@ -31,6 +33,7 @@ export const users = [
     id: 3,
     name: "Erik Sorley",
     username: "YarnViking",
+    password: "valhalla12",
     email: "eriksor@email.com",
     description:
       "I’m Erik, and I knit like a warrior—thick cables, rugged wool, and sweaters built for adventure. When I’m not knitting, I’m probably hiking or woodworking.",
@@ -45,6 +48,7 @@ export const users = [
     id: 4,
     name: "Olivia Sanchez",
     username: "StitchGodess",
+    password: "demeter123",
     email: "Osanchez@gmail.com",
     description:
       "Olivia here! Knitting is my happy place—soft yarn, elegant patterns, and rainy-day projects. Let’s talk stitches and style!",
@@ -59,6 +63,7 @@ export const users = [
     id: 5,
     name: "Sophia Bush",
     username: "LoopQueen",
+    password: "sweaterweather",
     email: "loopqueen@email.com",
     description:
       "Hey, I’m Sophie! Bright colors, cozy sweaters, and fun patterns are my thing. If you love a good knitting circle, you’re in the right place!",
@@ -73,6 +78,7 @@ export const users = [
     id: 6,
     name: "Emily Bronte",
     username: "KnotEnchanted",
+    password: "knittinghills",
     email: "emilybronte@gmail.com",
     description:
       "I’m Emily, and I believe knitting is pure magic—delicate lace, earthy tones, and cozy handmade shawls. Let’s create something beautiful together!",

@@ -7,9 +7,9 @@ export const findUser = Object.fromEntries(
 export let posts = [
   {
     id: 1,
-    imgScr: "/images/posts/post_1.jpg",
+    imgSrc: "/images/posts/post_1.jpg",
     imgAlt: "Purple yarn sticking out of a woven handbag",
-    title: "",
+    title: "New yarn, who dis?",
     caption: "Yay. finally got the new woven bag!",
     designer: "",
     pattern: "",
@@ -19,7 +19,7 @@ export let posts = [
     username: findUser[1].username,
     userId: 1,
     createdAt: "2025-03-19T12:00:00Z",
-    commments: [
+    comments: [
       {
         id: "cd1",
         text: "Great Bag for knitting",
@@ -40,7 +40,7 @@ export let posts = [
 
   {
     id: 2,
-    imgScr: "/images/posts/post_2.jpg",
+    imgSrc: "/images/posts/post_2.jpg",
     imgAlt: "the neckline of an unfinished trouser for a child",
     title: "Finnaly started!",
     caption:
@@ -53,12 +53,12 @@ export let posts = [
     username: findUser[5].username,
     userId: 5,
     createdAt: "2025-03-19T12:03:23Z",
-    commments: 0,
+    comments: [],
   },
 
   {
     id: 3,
-    imgScr: "/images/posts/post_3.jpg",
+    imgSrc: "/images/posts/post_3.jpg",
     imgAlt: "A set of finsihed mittens",
     title: "New mittens!",
     caption: "A new pair for the comming winter",
@@ -70,14 +70,14 @@ export let posts = [
     username: findUser[6].username,
     userId: 6,
     createdAt: "2025-03-09T12:00:00Z",
-    commments: {},
+    comments: [],
   },
 
   {
     id: 4,
-    imgScr: "/images/posts/post_4.jpg",
+    imgSrc: "/images/posts/post_4.jpg",
     imgAlt: "Dark pruple yarn lying on the floor",
-    title: "",
+    title: "Finally! New Yarn!",
     caption: "Treated myself to some new yarn!",
     designer: "",
     pattern: "",
@@ -87,7 +87,7 @@ export let posts = [
     username: findUser[1].username,
     userId: 1,
     createdAt: "2025-03-14T12:00:00Z",
-    commments: [
+    comments: [
       {
         id: "cd1",
         text: "Such a fantastic colour!",
@@ -108,7 +108,7 @@ export let posts = [
 
   {
     id: 5,
-    imgScr: "/images/posts/post_5.jpg",
+    imgSrc: "/images/posts/post_5.jpg",
     imgAlt: "A blue cardig with silver bling buttons",
     title: "New cardi",
     caption: "Finished this just in time for the wedding!",
@@ -116,16 +116,16 @@ export let posts = [
     pattern: "Ballong Cardigan",
     yarn: "Merino",
     likes: "789",
-    tag: "finsihed",
+    tag: "finished",
     username: findUser[5].username,
     userId: 5,
     createdAt: "2025-03-17T12:00:00Z",
-    commments: 0,
+    comments: [],
   },
 
   {
     id: 6,
-    imgScr: "/images/posts/post_6.jpg",
+    imgSrc: "/images/posts/post_6.jpg",
     imgAlt: "Orange yarn lying on a floor",
     title: "New socks!",
     caption: "Kniiting some new sock in prep for winter",
@@ -137,12 +137,12 @@ export let posts = [
     username: findUser[3].username,
     userId: 3,
     createdAt: "2025-03-17T12:00:28Z",
-    commments: 0,
+    comments: [],
   },
 
   {
     id: 7,
-    imgScr: "/images/posts/post_7.jpg",
+    imgSrc: "/images/posts/post_7.jpg",
     imgAlt: "A sweater in the making, just the yoke is finished",
     title: "Yoking away",
     caption: "Almost at separating the sleeves for this sweater!",
@@ -154,12 +154,12 @@ export let posts = [
     username: findUser[4].username,
     userId: 4,
     createdAt: "2025-03-30T12:00:00Z",
-    commments: 0,
+    comments: [],
   },
 
   {
     id: 8,
-    imgScr: "/images/posts/post_8.jpg",
+    imgSrc: "/images/posts/post_8.jpg",
     imgAlt: "A green striped mohair cardigan",
     title: "New Cardi, who dis?",
     caption: "Finilay the Summer CCardi is done!!",
@@ -171,24 +171,24 @@ export let posts = [
     username: findUser[4].username,
     userId: 4,
     createdAt: "2025-03-27T12:00:00Z",
-    commments: 0,
+    comments: [],
   },
 
   {
     id: 9,
-    imgScr: "/images/posts/post_14.jpg",
+    imgSrc: "/images/posts/post_9.jpg",
     imgAlt: "two bear balaclavas for children.",
-    title: "",
+    title: "Super cute hats 😍",
     caption: "Knitted some new winter hats for my nephews",
     designer: "Knitting for Olive",
     pattern: "Bear Balaclava",
     yarn: "Merino",
     likes: 847,
-    tag: "finsihed",
+    tag: "finished",
     username: findUser[2].username,
     userId: 2,
     createdAt: "2025-03-31T12:00:00Z",
-    commments: [
+    comments: [
       {
         id: "cd1",
         text: "They are soo cute!!",
@@ -201,7 +201,7 @@ export let posts = [
 
   {
     id: 10,
-    imgScr: "/images/posts/post_15.jpg",
+    imgSrc: "/images/posts/post_10.jpg",
     imgAlt: "neckline of a green cardigan",
     title: "Started a new summer project",
     caption: "",
@@ -213,7 +213,7 @@ export let posts = [
     username: findUser[4].username,
     userId: 4,
     createdAt: "2025-03-31T12:10:00Z",
-    commments: [
+    comments: [
       {
         id: "cd1",
         text: "Lovely colour!",
@@ -224,5 +224,3 @@ export let posts = [
     ],
   },
 ];
-
-console.log(posts);
