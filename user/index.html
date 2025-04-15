@@ -11,48 +11,49 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/images/favicon//apple-touch-icon.png"
+      href="../images/favicon//apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/images/favicon//favicon-32x32.png"
+      href="../images/favicon//favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/images/favicon//favicon-16x16.png"
+      href="../images/favicon//favicon-16x16.png"
     />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script type="module" src="/js/utils/toggleHamburger.js" defer></script>
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="../js/utils/toggleHamburger.js" defer></script>
+    <script type="module" src="../js/auth/loginHandler.js" defer></script>
     <title>Authentication | Knitflix</title>
   </head>
   <body class="bg-brand min-h-screen grid grid-reows-[auto_1fr_auto]">
     <header class="py-4 px-2 shadow-sm">
       <nav class="container mx-auto">
         <div class="flex justify-between items-center">
-          <a href="index.html" class="py-2 px-2"
+          <a href="../index.html" class="py-2 px-2"
             ><img
-              src="images/logo/logo.png"
+              src="../images/logo/logo.png"
               alt="knitflix logo"
               class="max-w-32"
           /></a>
           <div class="hidden md:flex items-center space-x-5">
             <a
               href="index.html"
-              class="py-4 px-2 text-text-dark border-b-3 border-accent-accentBtn"
+              class="py-4 px-2 text-text-dark border-b-4 border-accent-accentBtn"
               >Authentication</a
             >
             <a
-              href="user/feed/index.html"
+              href="feed/index.html"
               class="py-4 px-2 text-text-dark hover:font-extrabold hover:text-accent-secondaryBtn transition duration-300"
               >Feed</a
             >
             <a
-              href="user/profile/index.html"
+              href="profile/index.html"
               class="py-4 px-2 text-text-dark hover:font-extrabold hover:text-accent-secondaryBtn transition duration-300"
               >Profile</a
             >
@@ -89,14 +90,14 @@
             </li>
             <li>
               <a
-                href="user/feed/index.html"
+                href="feed/index.html"
                 class="block text-sm py-4 px-2 text-text-medium"
                 >Feed</a
               >
             </li>
             <li>
               <a
-                href="user/profile/index.html"
+                href="profile/index.html"
                 class="block text-sm py-4 px-2 text-text-medium"
                 >Profile</a
               >
@@ -137,7 +138,7 @@
         </div>
 
         <form
-          action="user/profile/index.html"
+          action="profile/index.html"
           method="get"
           id="login-form"
           class="flex flex-col w-full"
@@ -198,7 +199,7 @@
         class="hidden justify-center items-center max-w-md mx-auto py-4 px-2"
       >
         <form
-          action="user/profile/index.html"
+          action="profile/index.html"
           method="get"
           class="flex flex-col w-full"
           id="create-user-form"
@@ -251,7 +252,7 @@
     <footer>
       <div class="flex flex-col items-center py-4 px-2">
         <img
-          src="/images/logo/logo-footer.png"
+          src="../images/logo/logo-footer.png"
           alt="knitflix-logo"
           class="max-w-28 py-2 px-2"
         />
@@ -260,9 +261,9 @@
         </p>
       </div>
     </footer>
-    <script type="module" src="js/utils/source/posts.js"></script>
-    <script type="module" src="js/utils/updateYear.js"></script>
-    <script type="module" src="js/form/loginFormValidation.js"></script>
-    <script type="module" src="js/form/toggleCreateNewUserForm.js"></script>
+    <script type="module" src="../js/utils/source/posts.js"></script>
+    <script type="module" src="../js/utils/updateYear.js"></script>
+    <script type="module" src="../js/form/loginFormValidation.js"></script>
+    <script type="module" src="../js/form/toggleCreateNewUserForm.js"></script>
   </body>
 </html>
