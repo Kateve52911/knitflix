@@ -1,12 +1,16 @@
 # Knitflix
 
-I set out to create a website to display the project I have created so far.
-
 ## Description
+
+I set out to create a social media lpatform for knitters. It is meant to be a page where you can post you own projects and yarn you have in your yarn statch and what you want to do with it.
+
+It is also a project to showcase my skills in JS, HTML and Tailwind CSS.
 
 ## Built With
 
-On this project I have used HTML, CSS and Vanilla Javascript
+- Tailwind CSS for styling
+- HTML for structure
+- Javascript for client-side logic
 
 ## Getting Started
 
@@ -14,7 +18,7 @@ On this project I have used HTML, CSS and Vanilla Javascript
 
 In order to run the websites locally, one can do as follows:
 
-1. Clone the repo, this can be done for example, with the git command line tool (if installed):
+1. Clone the repositories, this can be done for example, with the git command line tool (if installed):
 
 ```bash
 gh repo clone Kateve52911/portfolio-website
@@ -28,7 +32,10 @@ To run the app, open VS Code (or equivalent), and then right click on the ´inde
 
 ## Contributing
 
-In order to contribute, create a PR in this repo. Add @Kateve52911 as a reviewer.
+Currently this is a school project I am doing at Noroff, and thus it is not open for contributions now.
+However, should it open for contributions later.
+
+When contributing please follow the code of conduct found [here](docs/CODE_OF_CONDUCT.md)
 
 ## Contact
 
