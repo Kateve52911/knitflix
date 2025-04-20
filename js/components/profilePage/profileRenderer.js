@@ -29,10 +29,6 @@ function setProfileImage(user) {
   document.querySelectorAll(".profile-avatar").forEach((element) => {
     element.src = user.avatarScr;
     element.alt = user.avatarAlt || `${user.username}'s profile picture`;
-
-    //   element.onerror = function() {
-    //     this.src =
-    //   }
   });
 }
 

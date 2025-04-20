@@ -25,9 +25,13 @@ function setupLogoutButton() {
   }
 }
 
-function handleLogout() {
+function handleLogout(event) {
+  if (event) event.preventDefault();
+
   clearCurrentUser();
-  window.location.href = "../index.html";
+
+  window.location.replace("../index.html");
+  return false;
 }
 
 document.addEventListener("DOMContentLoaded", initProfilePage);

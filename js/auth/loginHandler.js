@@ -1,14 +1,6 @@
 import { users } from "../utils/source/users.js";
 import { storeCurrentUser } from "./sessionManager.js";
 
-// export function initLoginForm() {
-//   const loginForm = document.getElementById("login-form");
-
-//   if (loginForm) {
-//     loginForm.addEventListener("submit", handleLoginSubmit);
-//   }
-// }
-
 export function initLoginForm() {
   const loginForm = document.getElementById("login-form");
   if (loginForm) {
@@ -41,10 +33,6 @@ function authenticateUser(usernameOrEmail, password) {
       (user.username === usernameOrEmail || user.email === usernameOrEmail) &&
       user.password === password
   );
-}
-
-function redirectToProfile() {
-  window.location.href = "user/profile/index.html";
 }
 
 function showLoginError() {
