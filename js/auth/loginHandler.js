@@ -18,7 +18,8 @@ export function initLoginForm() {
 }
 
 function handleLoginSubmit(event) {
-  event.preventDefault(); // This prevents the form from actually submitting
+  event.preventDefault();
+
   const usernameInput = document.getElementById("username").value;
   const passwordInput = document.getElementById("password").value;
 
@@ -26,7 +27,9 @@ function handleLoginSubmit(event) {
 
   if (user) {
     storeCurrentUser(user);
-    redirectToProfile(); // Your custom navigation
+
+    // Redirect WITHOUT credentials in URL
+    window.location.href = "profile/index.html";
   } else {
     showLoginError();
   }

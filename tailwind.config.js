@@ -15,6 +15,8 @@ module.exports = {
           primaryBtn: "#3E5E41",
           secondaryBtn: "#994031",
           accentBtn: "#2C4C7A",
+          dustyBlue: "#92AAC7",
+          sageGreen: "#A3B89C",
         },
 
         text: {

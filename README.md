@@ -1,10 +1,12 @@
 # Knitflix
 
+![image](/images/screenshots/Knitflix-Profile-Page.png)
+
 ## Description
 
-I set out to create a social media lpatform for knitters. It is meant to be a page where you can post you own projects and yarn you have in your yarn statch and what you want to do with it.
+I wanted to create a social media platform for knitters. It is meant to be a page where you can post you own projects and yarn you have in your yarnstash and project plans you might have.
 
-It is also a project to showcase my skills in JS, HTML and Tailwind CSS.
+It is a project to showcase my skills in JS, HTML and Tailwind CSS.
 
 ## Built With
 
@@ -21,7 +23,7 @@ In order to run the websites locally, one can do as follows:
 1. Clone the repositories, this can be done for example, with the git command line tool (if installed):
 
 ```bash
-gh repo clone Kateve52911/portfolio-website
+gh repo clone Kateve52911/knitflix
 ```
 
 2. Install Live Server in VS Code (or equivalent if using another IDE) and then it can be run from within.
@@ -32,7 +34,7 @@ To run the app, open VS Code (or equivalent), and then right click on the ´inde
 
 ## Contributing
 
-Currently this is a school project I am doing at Noroff, and thus it is not open for contributions now.
+Currently this is a school project I am doing while studing at Noroff, and thus it is not open for contributions right now.
 However, should it open for contributions later.
 
 When contributing please follow the code of conduct found [here](docs/CODE_OF_CONDUCT.md)
@@ -46,3 +48,6 @@ When contributing please follow the code of conduct found [here](docs/CODE_OF_CO
 ## Acknowledgments
 
 Many thanks to my very patient partner who has answered all my questions throughout the build of this website.
+Profile images are sources from [unsplash] (https://www.unsplash.com/)
+Icon in logo is from [iconfinder] (https://www.iconfinder.com/)
+All images in the feed are my owm.

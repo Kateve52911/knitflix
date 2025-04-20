@@ -856,6 +856,11 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
 }
 
+.border-accent-sageGreen {
+  --tw-border-opacity: 1;
+  border-color: rgb(163 184 156 / var(--tw-border-opacity, 1));
+}
+
 .bg-accent-accentBtn {
   --tw-bg-opacity: 1;
   background-color: rgb(44 76 122 / var(--tw-bg-opacity, 1));
@@ -864,6 +869,11 @@ video {
 .bg-accent-primaryBtn {
   --tw-bg-opacity: 1;
   background-color: rgb(62 94 65 / var(--tw-bg-opacity, 1));
+}
+
+.bg-accent-sageGreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(163 184 156 / var(--tw-bg-opacity, 1));
 }
 
 .bg-accent-secondaryBtn {

@@ -42,9 +42,9 @@ export let posts = [
     id: 2,
     imgSrc: "/images/posts/post_2.jpg",
     imgAlt: "the neckline of an unfinished trouser for a child",
-    title: "Finnaly started!",
+    title: "Finally started!",
     caption:
-      "Finnly managed to start the roject for a set of nursery trouser for Willy",
+      "Finally managed to start the project for a set of nursery trouser for Willy",
     designer: "Havre",
     pattern: "Honingblomst bukser",
     yarn: "Sunday",
@@ -59,9 +59,9 @@ export let posts = [
   {
     id: 3,
     imgSrc: "/images/posts/post_3.jpg",
-    imgAlt: "A set of finsihed mittens",
+    imgAlt: "A set of finished mittens",
     title: "New mittens!",
-    caption: "A new pair for the comming winter",
+    caption: "A new pair for the coming winter",
     designer: "Sofie",
     pattern: "Kransevotter",
     yarn: "Mitu",
@@ -76,7 +76,7 @@ export let posts = [
   {
     id: 4,
     imgSrc: "/images/posts/post_4.jpg",
-    imgAlt: "Dark pruple yarn lying on the floor",
+    imgAlt: "Dark purple yarn lying on the floor",
     title: "Finally! New Yarn!",
     caption: "Treated myself to some new yarn!",
     designer: "",
