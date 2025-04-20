@@ -5,21 +5,21 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: "#eac1bf",
+          DEFAULT: "#E5AA70",
           dark: "#2D3F38",
-          light: "#F7E5D9",
+          light: "#F5EFE0",
         },
 
         accent: {
-          heart: "#A14A3D",
-          primaryBtn: "#8B1E3F",
-          secondaryBtn: "#C97C5D",
-          accentBtn: "#A75D5D",
+          heart: "#764258",
+          primaryBtn: "#3E5E41",
+          secondaryBtn: "#994031",
+          accentBtn: "#2C4C7A",
         },
 
         text: {
-          dark: "#3D2B1F",
-          medium: "#5A3E2E",
+          dark: "#3B2314",
+          medium: "#1E3148",
           light: "#FFFFFF",
         },
       },

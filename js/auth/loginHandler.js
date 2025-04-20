@@ -1,11 +1,19 @@
 import { users } from "../utils/source/users.js";
 import { storeCurrentUser } from "./sessionManager.js";
 
+// export function initLoginForm() {
+//   const loginForm = document.getElementById("login-form");
+
+//   if (loginForm) {
+//     loginForm.addEventListener("submit", handleLoginSubmit);
+//   }
+// }
+
 export function initLoginForm() {
   const loginForm = document.getElementById("login-form");
-
   if (loginForm) {
     loginForm.addEventListener("submit", handleLoginSubmit);
+  } else {
   }
 }
 

@@ -47,12 +47,12 @@ export const users = [
   {
     id: 4,
     name: "Olivia Sanchez",
-    username: "StitchGodess",
+    username: "StitchGoddess",
     password: "demeter123",
     email: "Osanchez@gmail.com",
     description:
       "Olivia here! Knitting is my happy place—soft yarn, elegant patterns, and rainy-day projects. Let’s talk stitches and style!",
-    avatarScr: "/images/profile/StitchGodess.jpg",
+    avatarScr: "/images/profile/StitchGoddess.jpg",
     avatarAlt: "A smiling woman sitting in a chair wearing a blue shirt",
     followers: "135",
     following: "108",

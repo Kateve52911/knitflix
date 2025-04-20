@@ -29,4 +29,5 @@ function handleLogout() {
   clearCurrentUser();
   window.location.href = "../index.html";
 }
+
 document.addEventListener("DOMContentLoaded", initProfilePage);

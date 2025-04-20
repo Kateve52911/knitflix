@@ -26,7 +26,7 @@ export function renderSinglePost(post) {
   heartContainer.className = "relative inline-block";
 
   const heartIcon = document.createElement("i");
-  heartIcon.className = "fa-solid fa-heart text-accent-primaryBtn text-5xl";
+  heartIcon.className = "fa-solid fa-heart text-accent-heart text-5xl";
 
   const likes = document.createElement("span");
   likes.textContent = post.likes;
@@ -41,8 +41,7 @@ export function renderSinglePost(post) {
   commentContainer.className = "relative inline-block";
 
   const commentIcon = document.createElement("i");
-  commentIcon.className =
-    "fa-solid fa-comment text-accent-secondaryBtn text-5xl";
+  commentIcon.className = "fa-solid fa-comment text-accent-accentBtn text-5xl";
 
   const comments = document.createElement("span");
   comments.textContent = Array.isArray(post.comments)
