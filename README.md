@@ -48,6 +48,9 @@ When contributing please follow the code of conduct found [here](docs/CODE_OF_CO
 ## Acknowledgments
 
 Many thanks to my very patient partner who has answered all my questions throughout the build of this website.
+
 Profile images are sources from [unsplash] (https://www.unsplash.com/)
+
 Icon in logo is from [iconfinder] (https://www.iconfinder.com/)
+
 All images in the feed are my owm.
