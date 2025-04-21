@@ -20,7 +20,6 @@ function handleLoginSubmit(event) {
   if (user) {
     storeCurrentUser(user);
 
-    // Redirect WITHOUT credentials in URL
     window.location.href = "profile/index.html";
   } else {
     showLoginError();
