@@ -38,7 +38,7 @@
     ></script>
     <title>Feed | Knitflix</title>
   </head>
-  <body class="bg-brand min-h-screen grid grid-reows-[auto_1fr_auto]">
+  <body class="bg-brand min-h-screen grid grid-rows-[auto_1fr_auto]">
     <header class="py-4 px-2">
       <nav class="container mx-auto">
         <div class="flex justify-between items-center">
@@ -145,7 +145,7 @@
             <select
               name=""
               id="sort-select"
-              class="border border-gray-300 rounded-md py-2 px-3 bg-white text-text-dark focus:outline-none focus:ring-2 focus:ring-accent-accentBtn"
+              class="border border-gray-300 rounded-3xl py-2 px-3 bg-white text-text-dark focus:outline-none focus:ring-2 focus:ring-accent-accentBtn"
             >
               <option value="date">Newest First</option>
               <option value="likes">Most Liked</option>
@@ -165,6 +165,7 @@
 
       <div class="flex justify-center mb-6">
         <button
+          id="create-new-post"
           class="bg-accent-primaryBtn py-4 px-4 rounded-md text-white font-serif"
         >
           Create a new post
@@ -194,6 +195,10 @@
     <script
       type="module"
       src="../../js/components/filteringPosts/filterPosts.js"
+    ></script>
+    <script
+      type="module"
+      src="../../js/form/createNewPost/createNewPost.js"
     ></script>
   </body>
 </html>
