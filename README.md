@@ -4,7 +4,7 @@
 
 ## Description
 
-I wanted to create a social media platform for knitters. It is meant to be a page where you can post you own projects and yarn you have in your yarnstash and project plans you might have.
+I wanted to create a social media platform for knitters. It is meant to be a page where you can post you own projects and yarn you have in your yarn stash and project plans you might have.
 
 It is a project to showcase my skills in JS, HTML and Tailwind CSS.
 
@@ -20,22 +20,39 @@ It is a project to showcase my skills in JS, HTML and Tailwind CSS.
 
 In order to run the websites locally, one can do as follows:
 
-1. Clone the repositories, this can be done for example, with the git command line tool (if installed):
+#### Installing the prerequisites:
+
+Make sure you download the following:
+
+- Node package manager (npm)
+- Github Commandline Tool (gh)
+- VS Code with Live Server Extension (optional)
+
+These can be installed using homebrew or by following instructions on their respective websites.
+
+#### Running
+
+1. Clone the repository, this can be done for example, with the git command line tool (if installed):
 
 ```bash
 gh repo clone Kateve52911/knitflix
 ```
 
-2. Install Live Server in VS Code (or equivalent if using another IDE) and then it can be run from within.
+2. Open you terminal / IDE of choice and use the following command to install dependencies and then run it locally:
 
-### Running
+```bash
+npm install
+run npm dev
+```
 
-To run the app, open VS Code (or equivalent), and then right click on the ´index.html´ file and start with Live Server from the menu.
+3. If using VS Code with live server, remember to start the live server (defaults to port 5500) first. Then open it in your local browser. For example http://localhost:5500/user/. If you are not using VS Code and Live Server consult the documentation for your IDE / techstack for defining ports, etc.
+
+4. In order to see a user profile use the login details found in `js/utils/source/users.js`. Use the username and password to see how the user page looks for the user of this social media app.
 
 ## Contributing
 
-Currently this is a school project I am doing while studing at Noroff, and thus it is not open for contributions right now.
-However, should it open for contributions later.
+Currently this is a school project I am doing while studying at Noroff, and thus it is not open for contributions right now.
+However, should it open for contributions later any feedback would be welcome.
 
 When contributing please follow the code of conduct found [here](docs/CODE_OF_CONDUCT.md)
 
