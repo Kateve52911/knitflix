@@ -12,7 +12,7 @@ It is a project to showcase my skills in JS, HTML and Tailwind CSS.
 
 - Personalised profile page when user logs inn (use info in users.js to see this).
 - You can add you own posts to the page using the button for creating a new post (so far it only works until you refresh the page).
-- Filter, sort and search options in on the feed page
+- Filter, sort and search options in on the feed page.
 
 ## Built With
 
