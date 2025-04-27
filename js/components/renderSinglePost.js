@@ -8,11 +8,11 @@ export function renderSinglePost(post) {
   const postTitle = document.createElement("h2");
   postTitle.innerHTML = post.title;
   postTitle.className =
-    "text-text-dark font-serif text-center font-bold text-lg";
+    "text-text-dark font-body text-center font-bold text-lg";
 
   const user = document.createElement("p");
   user.textContent = post.username;
-  user.className = "text-text-dark font serif text-base";
+  user.className = "text-text-dark font-body text-base";
 
   const postImg = document.createElement("img");
   postImg.src = post.imgSrc;

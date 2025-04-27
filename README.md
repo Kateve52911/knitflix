@@ -22,13 +22,13 @@ In order to run the websites locally, one can do as follows:
 
 #### Installing the prerequisites:
 
-Make sure you download the following:
+Make sure you have the following installed on your computer:
 
 - Node package manager (npm)
 - Github Commandline Tool (gh)
 - VS Code with Live Server Extension (optional)
 
-These can be installed using homebrew or by following instructions on their respective websites.
+These can be installed using homebrew if using MAC or by following instructions on their respective websites.
 
 #### Running
 
@@ -70,4 +70,4 @@ Profile images are sources from [unsplash](https://www.unsplash.com/)
 
 Icon in logo is from [iconfinder](https://www.iconfinder.com/)
 
-All images in the feed are my owm.
+All images for the projects in the feed are my owm.
