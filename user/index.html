@@ -39,22 +39,22 @@
             ><img
               src="../images/logo/logo.png"
               alt="knitflix logo"
-              class="max-w-32"
+              class="max-w-28 object-contain"
           /></a>
           <div class="hidden md:flex items-center space-x-5">
             <a
               href="index.html"
-              class="py-4 px-2 text-text-dark border-b-4 border-accent-accentBtn"
+              class="py-4 px-2 font-heading text-text-dark border-b-4 border-accent-accentBtn"
               >Authentication</a
             >
             <a
               href="feed/index.html"
-              class="py-4 px-2 text-text-dark hover:font-extrabold hover:text-accent-secondaryBtn transition duration-300"
+              class="py-4 px-2 font-heading text-text-dark hover:font-extrabold hover:text-accent-secondaryBtn transition duration-300"
               >Feed</a
             >
             <a
               href="profile/index.html"
-              class="py-4 px-2 text-text-dark hover:font-extrabold hover:text-accent-secondaryBtn transition duration-300"
+              class="py-4 px-2 font-heading text-text-dark hover:font-extrabold hover:text-accent-secondaryBtn transition duration-300"
               >Profile</a
             >
           </div>
@@ -84,21 +84,21 @@
             <li>
               <a
                 href="index.html"
-                class="block text-sm py-4 px-2 bg-accent-secondaryBtn text-text-light"
+                class="block text-sm py-4 px-2 font-heading bg-accent-secondaryBtn text-text-light"
                 >Authentication</a
               >
             </li>
             <li>
               <a
                 href="feed/index.html"
-                class="block text-sm py-4 px-2 text-text-medium"
+                class="block text-sm py-4 px-2 font-heading text-text-medium"
                 >Feed</a
               >
             </li>
             <li>
               <a
                 href="profile/index.html"
-                class="block text-sm py-4 px-2 text-text-medium"
+                class="block text-sm py-4 px-2 font-heading text-text-medium"
                 >Profile</a
               >
             </li>
@@ -108,8 +108,10 @@
     </header>
     <main class="flex flex-col py-4 px-2">
       <div class="py-4 px-2 mx-auto">
-        <h1 class="text-4xl text-center text-text-dark">Knitflix</h1>
-        <p class="text-base italic text-center text-text-dark">
+        <h1 class="text-4xl text-center font-heading text-text-dark">
+          Knitflix
+        </h1>
+        <p class="text-base italic text-center font-body text-text-dark">
           "Welcome to Knitflix — your cozy corner of the internet to show off
           your yarn stash, share your latest projects, and connect with knitters
           who get it."
@@ -143,30 +145,30 @@
           id="login-form"
           class="flex flex-col w-full"
         >
-          <label for="username" class="text-start text-text-dark"
+          <label for="username" class="text-start text-text-dark font-body"
             >Username / Email</label
           >
           <input
             type="text"
             name="uid"
             id="username"
-            class="py-2 px-8 bg-brand-light text-text-dark"
+            class="py-2 px-8 bg-brand-light text-text-dark font-body"
             required
           />
 
-          <label for="password" class="text-start pt-4 text-text-dark"
+          <label for="password" class="text-start pt-4 text-text-dark font-body"
             >Password</label
           >
           <input
             type="password"
             name="pid"
             id="password"
-            class="py-2 px-8 bg-brand-light text-text-dark"
+            class="py-2 px-8 bg-brand-light text-text-dark font-body"
             required
           />
           <button
             type="submit"
-            class="my-4 py-2 px-6 bg-accent-accentBtn text-white"
+            class="my-4 py-2 px-6 bg-accent-accentBtn text-white font-body"
           >
             Login
           </button>
@@ -175,7 +177,7 @@
       <div
         class="flex flex-col justify-center item center max-w-md mx-auto py-4 px-2"
       >
-        <p class="text-text-dark italics cursor-default">
+        <p class="text-text-dark italics cursor-default font-body">
           Not a registered user? Create a profile here!
         </p>
         <button class="flex justify-center mb-2" id="new-user-btn">
@@ -205,45 +207,47 @@
           class="flex flex-col w-full"
           id="create-user-form"
         >
-          <label for="fullname" class="text-start pt-4 text-text-dark"
+          <label for="fullname" class="text-start pt-4 text-text-dark font-body"
             >Full name</label
           >
           <input
             type="text"
-            class="py-2 px-8 bg-brand-light text-text-dark"
+            class="py-2 px-8 bg-brand-light text-text-dark font-body"
             required
           />
-          <label for="email" class="text-start pt-4 text-text-dark"
+          <label for="email" class="text-start pt-4 text-text-dark font-body"
             >Email</label
           >
           <input
             type="email"
             name="email"
             id="email"
-            class="py-2 px-8 bg-brand-light text-text-dark"
+            class="py-2 px-8 bg-brand-light text-text-dark font-body"
             required
           />
-          <label for="username" class="text-start pt-4 text-text-dark"
+          <label for="username" class="text-start pt-4 text-text-dark font-body"
             >Username</label
           >
           <input
             type="text"
-            class="py-2 px-8 bg-brand-light text-text-dark"
+            class="py-2 px-8 bg-brand-light text-text-dark font-body"
             required
           />
-          <label for="password-new-user" class="text-start pt-4 text-text-dark"
+          <label
+            for="password-new-user"
+            class="text-start pt-4 text-text-dark font-body"
             >Password</label
           >
           <input
             type="password-new-user"
             name="password-new-user"
             id="password-new-user"
-            class="py-2 px-8 bg-brand-light text-text-dark"
+            class="py-2 px-8 bg-brand-light text-text-dark font-body"
             required
           />
           <button
             type="submit"
-            class="my-4 py-2 px-8 bg-accent-accentBtn text-white"
+            class="my-4 py-2 px-8 bg-accent-accentBtn text-white font-body"
           >
             Register
           </button>
@@ -257,7 +261,7 @@
           alt="knitflix-logo"
           class="max-w-28 py-2 px-2"
         />
-        <p class="text-text-dark text-base">
+        <p class="text-text-dark text-base font-body">
           Copyright Kathrine M. Evensen &copy; <span id="current-year"></span>
         </p>
       </div>

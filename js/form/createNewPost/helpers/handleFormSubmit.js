@@ -35,8 +35,20 @@ export function handleFormSubmit(event) {
   const postElement = renderSinglePost(newPost);
   allPostsContainer.insertBefore(postElement, allPostsContainer.firstChild);
 
+  const img = postElement.querySelector("img");
+  if (img && file) {
+    img.onload = () => {
+      URL.revokeObjectURL(imgSrc);
+    };
+  }
+
   form.reset();
   form.remove();
+
+  const createButton = document.getElementById("create-new-post");
+  if (createButton) {
+    createButton.classList.remove("hidden");
+  }
 }
 
 document

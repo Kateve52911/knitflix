@@ -3,6 +3,11 @@ module.exports = {
   content: ["./**/*.{html,js}", "!./node_modules/**/*"],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ["Tahoma", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+      },
+
       colors: {
         brand: {
           DEFAULT: "#E5AA70",
