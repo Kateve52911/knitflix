@@ -8,6 +8,11 @@ I wanted to create a social media platform for knitters. It is meant to be a pag
 
 It is a project to showcase my skills in JS, HTML and Tailwind CSS.
 
+#### Features:
+
+- Personalised profile page when user logs inn.
+- You can add you own posts to the page using the button for creating a new post (so far it only works until you refresh the page).
+
 ## Built With
 
 - Tailwind CSS for styling
@@ -64,9 +69,7 @@ When contributing please follow the code of conduct found [here](docs/CODE_OF_CO
 
 ## Acknowledgments
 
-Many thanks to my very patient partner who has answered all my questions throughout the build of this website.
-
-Profile images are sources from [unsplash](https://www.unsplash.com/)
+Profile images are sourced from [unsplash](https://www.unsplash.com/)
 
 Icon in logo is from [iconfinder](https://www.iconfinder.com/)
 
