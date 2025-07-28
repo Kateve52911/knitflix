@@ -14,6 +14,6 @@ export async function onAuth(event) {
     await login(email, password);
   }
 
-  const posts = await getPosrs();
+  const posts = await getPosts();
   console.log(posts);
 }
