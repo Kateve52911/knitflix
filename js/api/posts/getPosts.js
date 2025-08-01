@@ -16,9 +16,7 @@ import { loadKey } from "../../utils/storage/loadKey.js";
 const displayContainer = document.getElementById("display-container");
 //console.log(displayContainer);
 
-//const API_KEY = "9d74fe88-34f2-48ba-b0e9-4cc89c316f2d";
-
-import { API_KEY } from "../constants/constants.js";
+import { API_KEY } from "../general/constants.js";
 
 export async function fetchPosts() {
   try {

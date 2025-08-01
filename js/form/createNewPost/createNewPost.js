@@ -1,33 +1,29 @@
-import { createInputField } from "./helpers/createInputField.js";
-import { createTextareaField } from "./helpers/createTextareaField.js";
-import { createSubmitButton } from "./helpers/createSubmitButton.js";
-import { createFileInputField } from "./helpers/createFileInputField.js";
-import { handleFormSubmit } from "./helpers/handleFormSubmit.js";
+// /js/form/createNewPost/createNewPost.js - Handle DOM ready state
+console.log("🔥 createNewPost.js file is loading!");
 
-export function createPostForm() {
-  const newPostFormContainer = document.createElement("div");
-  newPostFormContainer.className = "flex flex-col items-center mb-6";
+import { attachButtonClickHandler } from "./helpers/buttonHandler.js";
 
-  const form = document.createElement("form");
-  form.className =
-    "bg-brand-light p-6 rounded-md shadow-md flex flex-col gap-4 ";
-  form.id = "new-post-form";
-  form.enctype = "multipart/form-data";
+function initializeButton() {
+  console.log("🔥 Initializing button...");
 
-  form.appendChild(createInputField("Post title", "text", "title"));
-  form.appendChild(createTextareaField("Body", "body"));
-  form.appendChild(
-    createInputField("Tag (e.g., 'wip', 'finished')", "text", "tag", false)
-  );
-  form.appendChild(
-    createInputField("Image URL (https://...)", "url", "imgSrc")
-  );
-  form.appendChild(createInputField("Image alt text", "text", "imgAlt"));
-  form.appendChild(createSubmitButton("Publish Post"));
+  const createNewPostButton = document.getElementById("create-new-post");
+  console.log("🔥 Button found:", createNewPostButton);
+  console.log("Button HTML:", createNewPostButton?.outerHTML);
 
-  newPostFormContainer.appendChild(form);
+  if (createNewPostButton) {
+    console.log("✅ Button found, calling attachButtonClickHandler");
+    attachButtonClickHandler(createNewPostButton);
+  } else {
+    console.error('❌ Button with ID "create-new-post" not found');
+    console.log("All buttons on page:", document.querySelectorAll("button"));
+  }
+}
 
-  newPostFormContainer.addEventListener("submit", handleFormSubmit);
-
-  return newPostFormContainer;
+// Check if DOM is already loaded or wait for it
+if (document.readyState === "loading") {
+  console.log("🔥 DOM still loading, waiting...");
+  document.addEventListener("DOMContentLoaded", initializeButton);
+} else {
+  console.log("🔥 DOM already ready, initializing immediately");
+  initializeButton();
 }

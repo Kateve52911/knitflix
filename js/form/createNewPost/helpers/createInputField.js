@@ -1,4 +1,4 @@
-export function createInputField(placeholder, type, name) {
+export function createInputField(placeholder, type, name, required = true) {
   const input = document.createElement("input");
   input.type = type;
   input.name = name;

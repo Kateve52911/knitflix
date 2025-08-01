@@ -1,8 +1,8 @@
-export async function createPostFromFormData(formData) {
+export function createPostFromFormData(formData) {
   const title = formData.get("title");
   const body = formData.get("body");
   const tag = formData.get("tag");
-  const imgUrl = formData.get("imgScr");
+  const imgSrc = formData.get("imgSrc");
   const imgAlt = formData.get("imgAlt");
 
   if (!title || !title.trim()) {
@@ -10,18 +10,19 @@ export async function createPostFromFormData(formData) {
   }
 
   if (!body || !body.trim()) {
-    throw new Error("body is required");
+    throw new Error("Body is required");
   }
 
-  if (!imgUrl || !imgUrl.trim()) {
-    throw new Error("imgUrl is required");
+  if (!imgSrc || !imgSrc.trim()) {
+    throw new Error("Image URL is required");
   }
 
   if (!imgAlt || !imgAlt.trim()) {
-    throw new Error("imgAlt is required");
+    throw new Error("Image alt text is required");
   }
 
-  if (!imgUrl.startsWith("http://") && !imgUrl.startsWith("https://")) {
+  // Basic URL validation
+  if (!imgSrc.startsWith("http://") && !imgSrc.startsWith("https://")) {
     throw new Error("Image URL must start with http:// or https://");
   }
 
@@ -29,13 +30,13 @@ export async function createPostFromFormData(formData) {
     title: title,
     body: body,
     media: {
-      url: imgUrl,
+      url: imgSrc,
       alt: imgAlt,
     },
   };
 
   if (tag && tag.trim()) {
-    createPostFromFormData.tags = [tag];
+    postData.tags = [tag];
   }
 
   return postData;

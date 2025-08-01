@@ -1,6 +1,12 @@
-import { createPostForm } from "../createNewPost.js";
-//import { posts } from "../../../utils/source/posts.js";
-import { renderSinglePost } from "../../../components/renderSinglePost.js";
+import { createPostFromFormData } from "../postFormData.js";
+import { submitPostToAPI } from "../../../api/posts/createPost.js";
+import { restoreCreatePostButton } from "./buttonHandler.js";
+import {
+  setButtonErrorState,
+  setButtonLoadingState,
+  setButtonSuccessState,
+} from "./buttonStateManager.js";
+import { handlePostSuccess } from "./postSuccessHandler.js";
 
 // export function handleFormSubmit(event) {
 //   try {
@@ -10,63 +16,32 @@ import { renderSinglePost } from "../../../components/renderSinglePost.js";
 //   }
 // }
 
-export function handleFormSubmit(event) {
+export async function handleFormSubmit(event) {
   event.preventDefault();
 
-  const form = event.target;
-  const allPostsContainer = document.getElementById("all-posts-container");
+  const form =
+    event.target.tagName === "FORM"
+      ? event.target
+      : event.target.querySelector("form");
   const formData = new FormData(form);
+  const submitButton = form.querySelector('button[type="submit');
 
-  const fileInput = form.querySelector('input[name="imgSrc"]');
-  const file = fileInput.files[0];
-  const imgSrc = file ? URL.createObjectURL(file) : "";
+  setButtonLoadingState(submitButton, "Creating post...");
 
-  const newPost = {
-    id: posts.length + 1,
-    imgSrc: imgSrc,
-    imgAlt: formData.get("imgAlt") || "",
-    title: formData.get("title") || "",
-    caption: formData.get("caption") || "",
-    designer: formData.get("designer") || "",
-    pattern: formData.get("pattern") || "",
-    yarn: formData.get("yarn") || "",
-    likes: 0,
-    tag: formData.get("tag") || "",
-    username: "CurrentUser",
-    userId: 1,
-    createdAt: new Date().toISOString(),
-    comments: [],
-  };
+  try {
+    const postData = createPostFromFormData(formData);
+    const result = await submitPostToAPI(postData);
 
-  posts.push(newPost);
+    setButtonSuccessState(submitButton);
+    form.reset();
 
-  const postElement = renderSinglePost(newPost);
-  allPostsContainer.insertBefore(postElement, allPostsContainer.firstChild);
+    setTimeout(() => {
+      handlePostSuccess(form);
+    }, 2000);
 
-  const img = postElement.querySelector("img");
-  if (img && file) {
-    img.onload = () => {
-      URL.revokeObjectURL(imgSrc);
-    };
-  }
-
-  form.reset();
-  form.remove();
-
-  const createButton = document.getElementById("create-new-post");
-  if (createButton) {
-    createButton.classList.remove("hidden");
+    return result;
+  } catch (error) {
+    console.error("Form submission failed:", error);
+    setButtonErrorState(submitButton, error.message);
   }
 }
-
-document
-  .getElementById("create-new-post")
-  .addEventListener("click", function () {
-    const createButton = document.getElementById("create-new-post");
-
-    if (!document.getElementById("new-post-form")) {
-      const form = createPostForm();
-      createButton.after(form);
-      createButton.classList.add("hidden");
-    }
-  });
