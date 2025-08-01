@@ -195,6 +195,8 @@
         class="sm:flex flex-col md:grid grid-cols-3 mx-auto"
         id="all-posts-container"
       ></div>
+
+      <div id="display-container"></div>
     </main>
     <footer>
       <div class="flex flex-col items-center py-4 px-2">
@@ -209,14 +211,16 @@
       </div>
     </footer>
     <script type="module" src="/js/utils/updateYear.js"></script>
+    <script type="module" src="/js/api/posts/getPosts.js"></script>
+    <script type="module" src="/js/components/renderSinglePost.js"></script>
     <script type="module" src="../../js/components/renderAllPosts.js"></script>
     <script
       type="module"
-      src="../../js/components/filteringPosts/filterPosts.js"
+      src="/js/components/filteringPosts/filterPosts.js"
     ></script>
     <script
       type="module"
-      src="../../js/form/createNewPost/createNewPost.js"
+      src="/js/form/createNewPost/createNewPost.js"
     ></script>
   </body>
 </html>

@@ -1,7 +1,10 @@
+import { fetchPosts } from "../../api/posts/getPosts.js";
 import { elements } from "./domElements.js";
-import { posts } from "../../utils/source/posts.js";
+// import { posts } from "../../utils/source/posts.js";
 import { filterAndSortPosts } from "./filterAndSortPosts.js";
 import { renderFilteredPosts } from "./renderFilteredPosts.js";
+
+const posts = await fetchPosts();
 
 export function setupEventListeners() {
   const { tagFilter, sortSelect, searchInput, postsContainer } = elements;

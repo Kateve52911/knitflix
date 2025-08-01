@@ -14,16 +14,15 @@ export function createPostForm() {
   form.id = "new-post-form";
   form.enctype = "multipart/form-data";
 
-  form.appendChild(createFileInputField("Upload Image", "imgSrc"));
-  form.appendChild(createInputField("Image alt text", "text", "imgAlt"));
   form.appendChild(createInputField("Post title", "text", "title"));
-  form.appendChild(createTextareaField("Caption", "caption"));
-  form.appendChild(createInputField("Designer", "text", "designer"));
-  form.appendChild(createInputField("Pattern", "text", "pattern"));
-  form.appendChild(createInputField("Yarn", "text", "yarn"));
+  form.appendChild(createTextareaField("Body", "body"));
   form.appendChild(
-    createInputField("Tag (e.g., 'wip', 'finished')", "text", "tag")
+    createInputField("Tag (e.g., 'wip', 'finished')", "text", "tag", false)
   );
+  form.appendChild(
+    createInputField("Image URL (https://...)", "url", "imgSrc")
+  );
+  form.appendChild(createInputField("Image alt text", "text", "imgAlt"));
   form.appendChild(createSubmitButton("Publish Post"));
 
   newPostFormContainer.appendChild(form);

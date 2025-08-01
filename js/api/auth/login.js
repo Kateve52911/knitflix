@@ -22,9 +22,11 @@
 //   throw new Error("Could not login to the account");
 // }
 
-import { loadKey, saveKey } from "../../utils/storage/saveKey";
+import { saveKey } from "../../utils/storage/saveKey.js";
 
 const loginForm = document.querySelector("#login-form");
+
+console.log(loginForm);
 
 async function loginUser(userDetails) {
   try {

@@ -1,6 +1,14 @@
 import { createPostForm } from "../createNewPost.js";
-import { posts } from "../../../utils/source/posts.js";
+//import { posts } from "../../../utils/source/posts.js";
 import { renderSinglePost } from "../../../components/renderSinglePost.js";
+
+// export function handleFormSubmit(event) {
+//   try {
+//     //
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 export function handleFormSubmit(event) {
   event.preventDefault();

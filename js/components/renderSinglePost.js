@@ -1,4 +1,8 @@
-import { posts } from "../utils/source/posts.js";
+import { fetchPosts } from "/js/api/posts/getPosts.js";
+
+const postsData = await fetchPosts();
+
+console.log(postsData);
 
 export function renderSinglePost(post) {
   const postContainer = document.createElement("div");
@@ -15,8 +19,8 @@ export function renderSinglePost(post) {
   user.className = "text-text-dark font-body text-base";
 
   const postImg = document.createElement("img");
-  postImg.src = post.imgSrc;
-  postImg.alt = post.imgAlt;
+  postImg.src = post.media ? post.media.url : "/images/posts/post_1.jpg";
+  postImg.alt = post.media ? post.media.alt : "No text";
   postImg.className = "max-w-52 items-center mt-2 shadow-xl";
 
   const buttonContainer = document.createElement("div");
@@ -29,7 +33,7 @@ export function renderSinglePost(post) {
   heartIcon.className = "fa-solid fa-heart text-accent-heart text-5xl";
 
   const likes = document.createElement("span");
-  likes.textContent = post.likes;
+  likes.textContent = post._count.reactions;
   likes.className =
     "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs font-bold";
 
@@ -44,9 +48,7 @@ export function renderSinglePost(post) {
   commentIcon.className = "fa-solid fa-comment text-accent-accentBtn text-5xl";
 
   const comments = document.createElement("span");
-  comments.textContent = Array.isArray(post.comments)
-    ? post.comments.length
-    : 0;
+  comments.textContent = post._count.comments;
   comments.className =
     "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs font-bold";
 
@@ -62,4 +64,4 @@ export function renderSinglePost(post) {
   return postContainer;
 }
 
-renderSinglePost(posts);
+//renderSinglePost(posts);
