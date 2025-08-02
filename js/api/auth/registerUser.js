@@ -1,4 +1,4 @@
-import { API_URL_AUTH, API_URL_BASE, API_URL_REGISTER } from "../constants.js";
+import { API_AUTH, API_REGISTER, API_BASE_URL } from "../general/constants.js";
 
 const registerForm = document.querySelector("#register-form");
 console.log(registerForm);
@@ -14,7 +14,7 @@ export async function registerUser(userDetails) {
       },
     };
     const response = await fetch(
-      "https://v2.api.noroff.dev/auth/register",
+      API_BASE_URL + API_AUTH + API_REGISTER,
       fetchOptions
     );
     console.log(response);

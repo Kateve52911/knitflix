@@ -25,7 +25,6 @@ import { renderSinglePost } from "./card/renderSinglePost.js";
 import { fetchPosts } from "/js/api/posts/getPosts.js";
 
 export async function renderAllPosts(containerId = "all-posts-container") {
-  // ← No posts parameter, async function
   const postsData = await fetchPosts(); // ← Fetches when function is called
   const allPostsContainer = document.getElementById(containerId);
 

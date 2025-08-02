@@ -1,29 +1,17 @@
 export function createModal() {
   const modal = document.createElement("div");
   modal.id = "post-modal";
-  modal.className =
-    "fixed inset-0 bg-brand-light bg-opacity-50 hidden z-50 flex items-center justify-center";
+  modal.className = "fixed inset-0 bg-accent-plum bg-opacity-50 hidden z-50 ";
 
   const modalWrapper = document.createElement("div");
-  modalWrapper.className = "m-2 rounded-lg bg-accent-plum p-4";
+  modalWrapper.className = "flex flex-col w-xl items-center";
 
   const modalContent = document.createElement("div");
   modalContent.id = "modal-content";
-
-  const closeButton = document.createElement("button");
-  closeButton.className =
-    "fa-solid fa-xmark text-3xl text-brand-light absolute top-2 right-2 hover:text-brand-medium ";
-  closeButton.onclick = closeModal;
+  modalContent.className =
+    "m-8 rounded-lg bg-accent-plum px-11 py-11 flex flex-col items-center justify-center relative";
 
   modalWrapper.appendChild(modalContent);
-  modalWrapper.appendChild(closeButton);
   modal.appendChild(modalWrapper);
   document.body.appendChild(modal);
-}
-
-function closeModal() {
-  const modal = document.getElementById("post-modal");
-  if (modal) {
-    modal.classList.add("hidden");
-  }
 }

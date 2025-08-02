@@ -6,6 +6,7 @@ export async function fetchSinglePost(postId) {
     if (!postId) {
       throw new Error("No post ID provided");
     }
+    const accessToken = loadKey("accessToken");
 
     if (!accessToken) {
       throw new Error("No acces token found");

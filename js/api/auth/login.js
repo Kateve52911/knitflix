@@ -23,12 +23,13 @@
 // }
 
 import { saveKey } from "../../utils/storage/saveKey.js";
+import { API_AUTH, API_BASE_URL, API_LOGIN } from "../general/constants.js";
 
 const loginForm = document.querySelector("#login-form");
 
 console.log(loginForm);
 
-async function loginUser(userDetails) {
+export async function loginUser(userDetails) {
   try {
     const fetchOptions = {
       method: "POST",
@@ -39,7 +40,7 @@ async function loginUser(userDetails) {
     };
 
     const response = await fetch(
-      "https://v2.api.noroff.dev/auth/login",
+      API_BASE_URL + API_AUTH + API_LOGIN,
       fetchOptions
     );
     const json = await response.json();

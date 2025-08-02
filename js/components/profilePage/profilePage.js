@@ -1,37 +1,37 @@
-import {
-  clearCurrentUser,
-  requireAuthentication,
-} from "../../auth/sessionManager.js";
-import { renderUserProfile } from "./profileRenderer.js";
-import { loadUserPosts } from "./loadUserPosts.js";
+// import {
+//   clearCurrentUser,
+//   requireAuthentication,
+// } from "../../auth/sessionManager.js";
+// import { renderUserProfile } from "./profileRenderer.js";
+// import { loadUserPosts } from "./loadUserPosts.js";
 
-function initProfilePage() {
-  const currentUser = requireAuthentication();
+// export function initProfilePage() {
+//   const currentUser = requireAuthentication();
 
-  if (currentUser) {
-    renderUserProfile(currentUser);
+//   if (currentUser) {
+//     renderUserProfile(currentUser);
 
-    loadUserPosts(currentUser.id);
+//     loadUserPosts(currentUser.id);
 
-    setupLogoutButton();
-  }
-}
+//     setupLogoutButton();
+//   }
+// }
 
-function setupLogoutButton() {
-  const logoutButton = document.getElementById("logout-button");
+// function setupLogoutButton() {
+//   const logoutButton = document.getElementById("logout-button");
 
-  if (logoutButton) {
-    logoutButton.addEventListener("click", handleLogout);
-  }
-}
+//   if (logoutButton) {
+//     logoutButton.addEventListener("click", handleLogout);
+//   }
+// }
 
-function handleLogout(event) {
-  if (event) event.preventDefault();
+// function handleLogout(event) {
+//   if (event) event.preventDefault();
 
-  clearCurrentUser();
+//   clearCurrentUser();
 
-  window.location.replace("../index.html");
-  return false;
-}
+//   window.location.replace("../index.html");
+//   return false;
+// }
 
-document.addEventListener("DOMContentLoaded", initProfilePage);
+// document.addEventListener("DOMContentLoaded", initProfilePage);
