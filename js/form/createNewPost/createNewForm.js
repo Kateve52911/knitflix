@@ -27,27 +27,3 @@ export function createPostForm() {
   newPostFormContainer.addEventListener("submit", handleFormSubmit);
   return newPostFormContainer;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("=== Checking for ID conflicts ===");
-
-  // Check for duplicate IDs
-  const allCreateButtons = document.querySelectorAll("#create-new-post");
-  console.log('Buttons with ID "create-new-post":', allCreateButtons.length);
-  allCreateButtons.forEach((btn, index) => {
-    console.log(`Button ${index}:`, btn.outerHTML);
-  });
-
-  // Check for any old user buttons
-  const oldUserBtn = document.getElementById("new-user-btn");
-  console.log('Old "new-user-btn" exists:', !!oldUserBtn);
-
-  // Check all buttons on the page
-  const allButtons = document.querySelectorAll("button");
-  console.log("All buttons on page:", allButtons.length);
-  allButtons.forEach((btn, index) => {
-    console.log(
-      `Button ${index}: ID="${btn.id}", Class="${btn.className}", Text="${btn.textContent}"`
-    );
-  });
-});
