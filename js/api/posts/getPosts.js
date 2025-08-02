@@ -16,7 +16,7 @@ import { loadKey } from "../../utils/storage/loadKey.js";
 const displayContainer = document.getElementById("display-container");
 //console.log(displayContainer);
 
-import { API_KEY } from "../general/constants.js";
+import { API_BASE_URL, API_KEY, API_POSTS } from "../general/constants.js";
 
 export async function fetchPosts() {
   try {
@@ -31,10 +31,7 @@ export async function fetchPosts() {
     };
     //console.log(fetchOptions);
 
-    const response = await fetch(
-      "https://v2.api.noroff.dev/social/posts",
-      fetchOptions
-    );
+    const response = await fetch(API_BASE_URL + API_POSTS, fetchOptions);
     const json = await response.json();
     //console.log(json);
     return json.data;

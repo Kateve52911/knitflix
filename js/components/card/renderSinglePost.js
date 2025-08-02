@@ -1,13 +1,11 @@
 import { fetchPosts } from "/js/api/posts/getPosts.js";
 
-const postsData = await fetchPosts();
-
-console.log(postsData);
+// const postsData = await fetchPosts();
 
 export function renderSinglePost(post) {
   const postContainer = document.createElement("div");
   postContainer.className =
-    "flex flex-col bg-brand-light items-center py-6 px-4 my-2 mx-2 shadow-lg rounded-lg";
+    "flex flex-col bg-brand-light items-center content-evenly py-6 px-4 my-2 mx-2 shadow-xl rounded-lg";
 
   const postTitle = document.createElement("h2");
   postTitle.innerHTML = post.title;
@@ -23,14 +21,14 @@ export function renderSinglePost(post) {
   postImg.alt = post.media ? post.media.alt : "No text";
   postImg.className = "max-w-52 items-center mt-2 shadow-xl";
 
-  const buttonContainer = document.createElement("div");
-  buttonContainer.className = "flex items-center space-x-4 mx-auto mt-2";
+  const reactionContainer = document.createElement("div");
+  reactionContainer.className = "flex items-center space-x-4 mx-auto mt-2";
 
   const heartContainer = document.createElement("div");
   heartContainer.className = "relative inline-block";
 
   const heartIcon = document.createElement("i");
-  heartIcon.className = "fa-solid fa-heart text-accent-heart text-5xl";
+  heartIcon.className = "fa-solid fa-heart text-accent-plum text-5xl";
 
   const likes = document.createElement("span");
   likes.textContent = post._count.reactions;
@@ -39,7 +37,7 @@ export function renderSinglePost(post) {
 
   heartContainer.appendChild(heartIcon);
   heartContainer.appendChild(likes);
-  buttonContainer.appendChild(heartContainer);
+  reactionContainer.appendChild(heartContainer);
 
   const commentContainer = document.createElement("div");
   commentContainer.className = "relative inline-block";
@@ -54,12 +52,19 @@ export function renderSinglePost(post) {
 
   commentContainer.appendChild(commentIcon);
   commentContainer.appendChild(comments);
-  buttonContainer.appendChild(commentContainer);
+  reactionContainer.appendChild(commentContainer);
+
+  const viewPostButton = document.createElement("button");
+  viewPostButton.className =
+    "view-post-button my-4 btn px-10 bg-accent-primaryBtn text-white font-body";
+  viewPostButton.textContent = "View Post";
+  viewPostButton.dataset.postId = post.id;
 
   postContainer.appendChild(postTitle);
   postContainer.appendChild(user);
   postContainer.appendChild(postImg);
-  postContainer.appendChild(buttonContainer);
+  postContainer.appendChild(reactionContainer);
+  postContainer.appendChild(viewPostButton);
 
   return postContainer;
 }

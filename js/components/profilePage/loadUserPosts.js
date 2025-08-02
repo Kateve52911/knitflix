@@ -1,5 +1,5 @@
 import { posts } from "../../utils/source/posts.js";
-import { renderSinglePost } from "../renderSinglePost.js";
+import { renderSinglePost } from "../card/renderSinglePost.js";
 
 export function loadUserPosts(userId) {
   const userProjectsContainer = document.getElementById("user-projects");

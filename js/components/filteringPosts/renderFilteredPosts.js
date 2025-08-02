@@ -1,4 +1,4 @@
-import { renderSinglePost } from "../renderSinglePost.js";
+import { renderSinglePost } from "../card/renderSinglePost.js";
 
 export function renderFilteredPosts(postsToRender, containerElement) {
   containerElement.innerHTML = "";

@@ -1,5 +1,5 @@
 //import { posts } from "../utils/source/posts.js";
-import { renderSinglePost } from "./renderSinglePost.js";
+import { renderSinglePost } from "./card/renderSinglePost.js";
 import { fetchPosts } from "/js/api/posts/getPosts.js";
 
 const postsData = await fetchPosts();
