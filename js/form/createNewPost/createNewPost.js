@@ -1,6 +1,6 @@
 // /js/form/createNewPost/createNewPost.js - Handle DOM ready state
 
-import { attachButtonClickHandler } from "./helpers/buttonHandler.js";
+import { attachButtonClickHandler } from "../helpers/buttonHandler.js";
 
 function initializeButton() {
   const createNewPostButton = document.getElementById("create-new-post");

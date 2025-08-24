@@ -14,7 +14,7 @@ export async function fetchPosts() {
 
     const response = await fetch(API_BASE_URL + API_POSTS, fetchOptions);
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
     return json.data;
   } catch (error) {
     console.log(error);

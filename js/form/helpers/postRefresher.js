@@ -1,5 +1,5 @@
-import { fetchPosts } from "../../../api/posts/getPosts.js";
-import { renderAllPosts } from "../../../components/renderAllPosts.js";
+import { fetchPosts } from "../../api/posts/getPosts.js";
+import { renderAllPosts } from "../../components/renderAllPosts.js";
 import { showErrorMessage, showLoadingMessage } from "./feedbackMessages.js";
 
 export async function refreshPostFeed() {

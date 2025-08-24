@@ -1,20 +1,11 @@
-import { createPostFromFormData } from "../postFormData.js";
-import { submitPostToAPI } from "../../../api/posts/createPost.js";
-import { restoreCreatePostButton } from "./buttonHandler.js";
+import { createPostFromFormData } from "../createNewPost/postFormData.js";
+import { submitPostToAPI } from "../../api/posts/createPost.js";
 import {
   setButtonErrorState,
   setButtonLoadingState,
   setButtonSuccessState,
 } from "./buttonStateManager.js";
 import { handlePostSuccess } from "./postSuccessHandler.js";
-
-// export function handleFormSubmit(event) {
-//   try {
-//     //
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 export async function handleFormSubmit(event) {
   event.preventDefault();

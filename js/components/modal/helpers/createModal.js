@@ -14,4 +14,6 @@ export function createModal() {
   modalWrapper.appendChild(modalContent);
   modal.appendChild(modalWrapper);
   document.body.appendChild(modal);
+
+  return modal;
 }

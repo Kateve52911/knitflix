@@ -31,6 +31,7 @@ export function renderViewModal(postData) {
 
   const editButton = document.createElement("button");
   editButton.className = "fa-solid fa-pen text-accent-sageGreen text-2xl";
+  editButton.id = "edit-post-button";
 
   const deleteButton = document.createElement("button");
   deleteButton.className =

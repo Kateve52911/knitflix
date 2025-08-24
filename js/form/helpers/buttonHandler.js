@@ -1,4 +1,4 @@
-import { createPostForm } from "../createNewForm.js";
+import { createPostForm } from "../createNewPost/createNewForm.js";
 
 export function attachButtonClickHandler(button) {
   button.addEventListener("click", () => {
