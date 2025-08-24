@@ -1,10 +1,7 @@
 import { createInputField } from "../helpers/createInputField.js";
 import { createTextareaField } from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
-import {
-  // handleCreatePostSubmit,
-  handleFormSubmit,
-} from "../helpers/handleCreatePostFormSubmit.js";
+import { handleCreatePostSubmit } from "../helpers/handleFormSubmit.js";
 
 export function createPostForm() {
   const newPostFormContainer = document.createElement("div");
@@ -27,6 +24,6 @@ export function createPostForm() {
 
   form.appendChild(createSubmitButton("Publish Post"));
   newPostFormContainer.appendChild(form);
-  newPostFormContainer.addEventListener("submit", handleFormSubmit);
+  newPostFormContainer.addEventListener("submit", handleCreatePostSubmit);
   return newPostFormContainer;
 }

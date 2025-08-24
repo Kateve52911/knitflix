@@ -8,15 +8,15 @@ import {
 import { handlePostSuccess } from "./postSuccessHandler.js";
 import { updatePost } from "../../api/posts/updatePost.js";
 
-// export async function handleCreatePostSubmit(event) {
-//   handleFormSubmit(event, submitPostToAPI);
-// }
+export async function handleCreatePostSubmit(event) {
+  handleFormSubmit(event, submitPostToAPI);
+}
 
-// export async function handleEditPostSubmit(event) {
-//   handleFormSubmit(event, updatePost);
-// }
+export async function handleEditPostSubmit(event) {
+  handleFormSubmit(event, updatePost);
+}
 
-export async function handleFormSubmit(event) {
+export async function handleFormSubmit(event, func) {
   event.preventDefault();
 
   const form =
@@ -26,18 +26,20 @@ export async function handleFormSubmit(event) {
   const formData = new FormData(form);
   const submitButton = form.querySelector('button[type="submit');
 
-  setButtonLoadingState(submitButton, "Creating post...");
+  //setButtonLoadingState(submitButton, "Creating post...");
 
   try {
     const postData = createPostFromFormData(formData);
-    const result = await submitPostToAPI(postData);
+    const result = await func(postData);
 
     setButtonSuccessState(submitButton);
     form.reset();
 
-    setTimeout(() => {
-      handlePostSuccess(form);
-    }, 2000);
+    // setTimeout(() => {
+    //   handlePostSuccess(form);
+    // }, 2000);
+
+    handlePostSuccess(form);
 
     return result;
   } catch (error) {

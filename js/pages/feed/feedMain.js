@@ -21,7 +21,7 @@ if (createPostBtn) {
   attachButtonClickHandler(createPostBtn);
 }
 
-let selectedPost = "";
+export let selectedPost = "";
 
 document
   .getElementById("all-posts-container")

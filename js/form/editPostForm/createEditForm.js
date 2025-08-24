@@ -1,10 +1,16 @@
-import { createInputField } from "../helpers/createInputField.js";
-import { createTextareaField } from "../helpers/createTextareaField.js";
+import {
+  createInputEditField,
+  createInputField,
+} from "../helpers/createInputField.js";
+import {
+  createTextAreaEditPost,
+  createTextareaField,
+} from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
 import {
-  //   handleEditPostSubmit,
+  handleEditPostSubmit,
   handleFormSubmit,
-} from "../helpers/handleCreatePostFormSubmit.js";
+} from "../helpers/handleFormSubmit.js";
 import { fetchSinglePost } from "../../api/posts/getSingePost.js";
 
 export async function createEditForm(postId) {
@@ -23,13 +29,11 @@ export async function createEditForm(postId) {
   form.className = "flex flex-col gap-4";
   form.id = "new-post-form";
 
-  form.appendChild(createInputField(post.data.title, "text", "title"));
-  form.appendChild(createInputField(post.data.media.url, "text", "imgSrc"));
-  form.appendChild(createInputField(post.data.media.alt, "text", "imgAlt"));
-  form.appendChild(createTextareaField(post.data.body, "body"));
-  form.appendChild(
-    createInputField("Tag (e.g., 'wip', 'finished')", "text", "tag", false)
-  );
+  form.appendChild(createInputEditField(post.data.title, "text", "title"));
+  form.appendChild(createInputEditField(post.data.media.url, "text", "imgSrc"));
+  form.appendChild(createInputEditField(post.data.media.alt, "text", "imgAlt"));
+  form.appendChild(createTextAreaEditPost(post.data.body, "body"));
+  form.appendChild(createInputEditField("Tag", "text", "tag", false));
 
   form.appendChild(createSubmitButton("Save"));
   editPostContainer.appendChild(editContainerTitle);
