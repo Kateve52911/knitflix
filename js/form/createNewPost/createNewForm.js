@@ -1,7 +1,10 @@
 import { createInputField } from "../helpers/createInputField.js";
 import { createTextareaField } from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
-import { handleFormSubmit } from "../helpers/handleFormSubmit.js";
+import {
+  // handleCreatePostSubmit,
+  handleFormSubmit,
+} from "../helpers/handleCreatePostFormSubmit.js";
 
 export function createPostForm() {
   const newPostFormContainer = document.createElement("div");

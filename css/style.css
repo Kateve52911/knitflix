@@ -1221,6 +1221,26 @@ video {
   transition-duration: 300ms;
 }
 
+.placeholder\:text-text-dark::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(59 35 20 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-text-dark::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(59 35 20 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-red-500::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:text-red-500::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
 .hover\:font-extrabold:hover {
   font-weight: 800;
 }

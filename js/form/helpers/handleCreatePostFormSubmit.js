@@ -6,6 +6,15 @@ import {
   setButtonSuccessState,
 } from "./buttonStateManager.js";
 import { handlePostSuccess } from "./postSuccessHandler.js";
+import { updatePost } from "../../api/posts/updatePost.js";
+
+// export async function handleCreatePostSubmit(event) {
+//   handleFormSubmit(event, submitPostToAPI);
+// }
+
+// export async function handleEditPostSubmit(event) {
+//   handleFormSubmit(event, updatePost);
+// }
 
 export async function handleFormSubmit(event) {
   event.preventDefault();

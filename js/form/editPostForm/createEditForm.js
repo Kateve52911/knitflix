@@ -1,19 +1,26 @@
 import { createInputField } from "../helpers/createInputField.js";
 import { createTextareaField } from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
-import { handleFormSubmit } from "../helpers/handleFormSubmit.js";
+import {
+  //   handleEditPostSubmit,
+  handleFormSubmit,
+} from "../helpers/handleCreatePostFormSubmit.js";
 import { fetchSinglePost } from "../../api/posts/getSingePost.js";
 
 export async function createEditForm(postId) {
   console.log(postId);
   const post = await fetchSinglePost(postId);
   console.log(post);
-  const newPostFormContainer = document.createElement("div");
-  newPostFormContainer.className = "flex flex-col items-center mb-6";
+  const editPostContainer = document.createElement("div");
+  editPostContainer.className =
+    "items-center mb-6 bg-accent-sageGreen p-6 rounded-md shadow-md flex flex-col  ";
+
+  const editContainerTitle = document.createElement("h2");
+  editContainerTitle.innerHTML = "Edit your post:";
+  editContainerTitle.className = "text-text-dark py-4";
 
   const form = document.createElement("form");
-  form.className =
-    "bg-brand-light p-6 rounded-md shadow-md flex flex-col gap-4 ";
+  form.className = "flex flex-col gap-4";
   form.id = "new-post-form";
 
   form.appendChild(createInputField(post.data.title, "text", "title"));
@@ -25,7 +32,8 @@ export async function createEditForm(postId) {
   );
 
   form.appendChild(createSubmitButton("Save"));
-  newPostFormContainer.appendChild(form);
-  newPostFormContainer.addEventListener("submit", handleFormSubmit);
-  return newPostFormContainer;
+  editPostContainer.appendChild(editContainerTitle);
+  editPostContainer.appendChild(form);
+  editPostContainer.addEventListener("submit", handleEditPostSubmit);
+  return editPostContainer;
 }

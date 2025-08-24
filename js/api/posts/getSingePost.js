@@ -9,7 +9,7 @@ export async function fetchSinglePost(postId) {
     const accessToken = loadKey("accessToken");
 
     if (!accessToken) {
-      throw new Error("No acces token found");
+      throw new Error("No access token found");
     }
 
     const fetchOptions = {

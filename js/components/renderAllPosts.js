@@ -25,7 +25,7 @@ import { renderSinglePost } from "./card/renderSinglePost.js";
 import { fetchPosts } from "/js/api/posts/getPosts.js";
 
 export async function renderAllPosts(containerId = "all-posts-container") {
-  const postsData = await fetchPosts(); // ← Fetches when function is called
+  const postsData = await fetchPosts();
   const allPostsContainer = document.getElementById(containerId);
 
   if (!allPostsContainer) {
@@ -35,7 +35,6 @@ export async function renderAllPosts(containerId = "all-posts-container") {
 
   allPostsContainer.innerHTML = "";
   postsData.forEach((post) => {
-    // ← Uses internally fetched data
     const postContainer = renderSinglePost(post);
     allPostsContainer.appendChild(postContainer);
   });
