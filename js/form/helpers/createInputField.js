@@ -1,5 +1,5 @@
 export function createInputField(placeholder, type, name, required = true) {
-  const input = createInputElement(type, name);
+  const input = createInputElement(type, name, required);
   input.placeholder = placeholder;
   return input;
 }

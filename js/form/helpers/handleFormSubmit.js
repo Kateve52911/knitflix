@@ -17,16 +17,32 @@ export async function handleEditPostSubmit(event) {
 }
 
 export async function handleFormSubmit(event, func) {
-  event.preventDefault();
+  // event.preventDefault();
 
+  // const form =
+  //   event.target.tagName === "FORM"
+  //     ? event.target
+  //     : event.target.querySelector("form");
+  // const formData = new FormData(form);
+  // const submitButton = form.querySelector('button[type="submit"]');
+
+  //setButtonLoadingState(submitButton, "Creating post...");
+
+  event.preventDefault();
   const form =
     event.target.tagName === "FORM"
       ? event.target
       : event.target.querySelector("form");
-  const formData = new FormData(form);
-  const submitButton = form.querySelector('button[type="submit');
 
-  //setButtonLoadingState(submitButton, "Creating post...");
+  const formData = new FormData(form);
+
+  // Debug: Log all form data
+  console.log("Form data entries:");
+  for (let [key, value] of formData.entries()) {
+    console.log(key, ":", value);
+  }
+
+  const submitButton = form.querySelector('button[type="submit"]');
 
   try {
     const postData = createPostFromFormData(formData);

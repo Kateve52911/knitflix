@@ -1,5 +1,8 @@
 import { createInputField } from "../helpers/createInputField.js";
-import { createTextareaField } from "../helpers/createTextareaField.js";
+import {
+  createTextAreaCreatingPost,
+  createTextareaField,
+} from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
 import { handleCreatePostSubmit } from "../helpers/handleFormSubmit.js";
 
@@ -13,7 +16,7 @@ export function createPostForm() {
   form.id = "new-post-form";
 
   form.appendChild(createInputField("Post title", "text", "title"));
-  form.appendChild(createTextareaField("Body", "body"));
+  form.appendChild(createTextAreaCreatingPost("Body", "body"));
   form.appendChild(
     createInputField("Image URL (https://...)", "text", "imgSrc")
   );

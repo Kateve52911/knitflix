@@ -4,16 +4,14 @@ import { showErrorMessage, showLoadingMessage } from "./feedbackMessages.js";
 
 export async function refreshPostFeed() {
   const postContainer = document.getElementById("all-posts-container");
-
   if (!postContainer) {
-    console.error("Post container nor found!");
+    console.error("Post container not found!");
     return;
   }
 
   try {
     showLoadingMessage(postContainer);
-    const freshPosts = await fetchPosts();
-    renderAllPosts(freshPosts);
+    await renderAllPosts("all-posts-container");
   } catch (error) {
     console.error("Error refreshing posts", error);
     showErrorMessage(postContainer);
