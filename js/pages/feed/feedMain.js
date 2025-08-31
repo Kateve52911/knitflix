@@ -1,3 +1,4 @@
+import { deletePost } from "../../api/posts/deletePost.js";
 import { fetchSinglePost } from "../../api/posts/getSingePost.js";
 import { createModal } from "../../components/modal/helpers/createModal.js";
 import { showPostModal } from "../../components/modal/showPostModal.js";
@@ -43,5 +44,13 @@ document.addEventListener("click", async (event) => {
     const modalContent = document.getElementById("modal-content");
     modalContent.innerHTML = "";
     modalContent.appendChild(formContainer);
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.id === "delete-post-button") {
+    console.log("Dinbgus 3");
+    console.log(event);
+    deletePost();
   }
 });

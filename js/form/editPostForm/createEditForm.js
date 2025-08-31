@@ -1,16 +1,7 @@
-import {
-  createInputEditField,
-  createInputField,
-} from "../helpers/createInputField.js";
-import {
-  createTextAreaEditPost,
-  createTextareaField,
-} from "../helpers/createTextareaField.js";
+import { createInputEditField } from "../helpers/createInputField.js";
+import { createTextAreaEditPost } from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
-import {
-  handleEditPostSubmit,
-  handleFormSubmit,
-} from "../helpers/handleFormSubmit.js";
+import { handleEditPostSubmit } from "../helpers/handleFormSubmit.js";
 import { fetchSinglePost } from "../../api/posts/getSingePost.js";
 
 export async function createEditForm(postId) {

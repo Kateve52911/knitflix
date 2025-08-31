@@ -36,6 +36,7 @@ export function renderViewModal(postData) {
   const deleteButton = document.createElement("button");
   deleteButton.className =
     "fa-solid fa-trash-can text-accent-dustyBlue text-2xl";
+  deleteButton.id = "delete-post-button";
 
   const body = document.createElement("p");
   body.innerHTML = postData.data.body;
