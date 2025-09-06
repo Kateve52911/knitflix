@@ -30,8 +30,11 @@ export function createTextAreaCreatingPost(placeholder, name) {
   return textarea;
 }
 
-export function createTextAreaEditPost(placeholder, name) {
-  const textarea = createTextareaField(name);
-  textarea.value = placeholder;
+export function createTextAreaEditPost(value, name) {
+  const textarea = document.createElement("textarea");
+  textarea.name = name;
+  textarea.value = value;
+  textarea.required = true;
+  textarea.className = "border p-2 rounded-md h-32 resize-none";
   return textarea;
 }

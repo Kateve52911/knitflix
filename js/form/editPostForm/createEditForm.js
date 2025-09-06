@@ -29,6 +29,6 @@ export async function createEditForm(postId) {
   form.appendChild(createSubmitButton("Save"));
   editPostContainer.appendChild(editContainerTitle);
   editPostContainer.appendChild(form);
-  editPostContainer.addEventListener("submit", handleEditPostSubmit);
+  form.addEventListener("submit", handleEditPostSubmit);
   return editPostContainer;
 }

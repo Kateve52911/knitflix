@@ -18,12 +18,15 @@ export async function fetchSinglePost(postId) {
         Authorization: `Bearer ${accessToken}`,
         "X-Noroff-API-Key": API_KEY,
         "Content-Type": "application(json",
+        _author: true,
       },
     };
 
     const URL = `${API_BASE_URL}${API_POSTS}/${postId}`;
     const response = await fetch(URL, fetchOptions);
     const json = await response.json();
+    console.log("Point of interest");
+    console.log(json);
     return json;
   } catch (error) {
     console.log(error);

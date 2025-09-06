@@ -46,7 +46,6 @@ import { fetchPosts } from "/js/api/posts/getPosts.js";
 export async function renderAllPosts(containerId = "all-posts-container") {
   try {
     const postsData = await fetchPosts();
-    console.log("Posts fetched in renderAllPosts:", postsData);
 
     const allPostsContainer = document.getElementById(containerId);
     if (!allPostsContainer) {

@@ -36,21 +36,23 @@ document
 
 document.addEventListener("click", async (event) => {
   if (event.target.id === "edit-post-button") {
-    console.log("Dingus 1");
-    console.log(selectedPost);
     const formContainer = await createEditForm(selectedPost);
-    console.log("Dingus 2");
-    console.log(formContainer);
     const modalContent = document.getElementById("modal-content");
     modalContent.innerHTML = "";
     modalContent.appendChild(formContainer);
   }
 });
 
-document.addEventListener("click", (event) => {
+document.addEventListener("click", async (event) => {
   if (event.target.id === "delete-post-button") {
-    console.log("Dinbgus 3");
-    console.log(event);
-    deletePost();
+    try {
+      await deletePost();
+      const modalContainer = document.getElementById("post-modal");
+      modalContainer.style.display = "none";
+
+      location.reload();
+    } catch (error) {
+      console.error("Failed to delete post:", error);
+    }
   }
 });

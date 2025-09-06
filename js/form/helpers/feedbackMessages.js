@@ -39,5 +39,28 @@ function autoRemoveSuccessMessage(message) {
     if (message && message.parentElement) {
       message.remove();
     }
-  }, 4000);
+  }, 1000);
+}
+
+export function showEditSuccessMessage() {
+  // Create success message that appears at the top of the page, not in posts container
+  const body = document.body;
+  const successMessage = createEditSuccessElement();
+
+  // Add to top of page instead of posts container
+  if (body.firstChild) {
+    body.insertBefore(successMessage, body.firstChild);
+  } else {
+    body.appendChild(successMessage);
+  }
+
+  autoRemoveSuccessMessage(successMessage);
+}
+
+function createEditSuccessElement() {
+  const successMessage = document.createElement("div");
+  successMessage.textContent = "Post updated successfully!";
+  successMessage.className =
+    "bg-green-100 text-green-800 p-4 rounded-md mb-4 text-center font-body fixed top-4 left-1/2 transform -translate-x-1/2 z-50";
+  return successMessage;
 }
