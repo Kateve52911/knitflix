@@ -1,11 +1,7 @@
-import { fetchPosts } from "/js/api/posts/getPosts.js";
-
-// const postsData = await fetchPosts();
-
 export function renderSinglePost(post) {
   const postContainer = document.createElement("div");
   postContainer.className =
-    "flex flex-col bg-brand-light items-center content-evenly py-6 px-4 my-2 mx-2 shadow-xl rounded-lg";
+    "flex flex-col bg-brand-light items-center content-evenly py-4 px-4 my-2 mx-4 my-6 shadow-xl rounded-lg";
 
   const postTitle = document.createElement("h2");
   postTitle.innerHTML = post.title;
@@ -19,7 +15,7 @@ export function renderSinglePost(post) {
   const postImg = document.createElement("img");
   postImg.src = post.media ? post.media.url : "/images/posts/post_1.jpg";
   postImg.alt = post.media ? post.media.alt : "No text";
-  postImg.className = "max-w-52 items-center mt-2 shadow-xl";
+  postImg.className = "max-w-48 items-center mt-2 shadow-xl";
 
   const reactionContainer = document.createElement("div");
   reactionContainer.className = "flex items-center space-x-4 mx-auto mt-2";

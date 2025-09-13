@@ -10,7 +10,11 @@ export async function fetchPosts() {
         "X-Noroff-API-Key": API_KEY,
       },
     };
-    const response = await fetch(API_BASE_URL + API_POSTS, fetchOptions);
+
+    const response = await fetch(
+      API_BASE_URL + API_POSTS + "/?_author=true",
+      fetchOptions
+    );
     const json = await response.json();
     return json.data;
   } catch (error) {

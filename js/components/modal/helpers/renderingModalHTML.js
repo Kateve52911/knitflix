@@ -9,10 +9,10 @@ export function renderViewModal(postData) {
   title.className = "text-text-light font-body text-center font-bold text-lg";
   title.innerHTML = postData.data.title;
 
-  // const author = document.createElement("h3");
-  // author.innerHTML = postData._author;
-  // author.className = "text-text-light font-body text-center font text-s";
-  // console.log(author);
+  const author = document.createElement("h3");
+  author.innerHTML = postData.data.author.name;
+  author.className = "text-text-light font-body text-center font text-s";
+  console.log(author);
 
   const dateCreated = document.createElement("p");
   dateCreated.innerHTML = postData.data.created;
@@ -52,7 +52,7 @@ export function renderViewModal(postData) {
 
   modalContent.appendChild(closeButton);
   modalContent.appendChild(title);
-  //modalContent.appendChild(author);
+  modalContent.appendChild(author);
   modalContent.appendChild(dateCreated);
   modalContent.appendChild(img);
   modalContent.appendChild(buttonContainer);
