@@ -8,9 +8,9 @@ export function renderSinglePost(post) {
   postTitle.className =
     "text-text-dark font-body text-center font-bold text-lg";
 
-  const user = document.createElement("p");
-  user.textContent = post.username;
-  user.className = "text-text-dark font-body text-base";
+  const author = document.createElement("p");
+  author.innerHTML = post.author.name;
+  author.className = "text-text-dark font-body text-base";
 
   const postImg = document.createElement("img");
   postImg.src = post.media ? post.media.url : "/images/posts/post_1.jpg";
@@ -57,12 +57,10 @@ export function renderSinglePost(post) {
   viewPostButton.dataset.postId = post.id;
 
   postContainer.appendChild(postTitle);
-  postContainer.appendChild(user);
+  postContainer.appendChild(author);
   postContainer.appendChild(postImg);
   postContainer.appendChild(reactionContainer);
   postContainer.appendChild(viewPostButton);
 
   return postContainer;
 }
-
-//renderSinglePost(posts);

@@ -1,8 +1,5 @@
 import { createInputField } from "../helpers/createInputField.js";
-import {
-  createTextAreaCreatingPost,
-  createTextareaField,
-} from "../helpers/createTextareaField.js";
+import { createTextAreaCreatingPost } from "../helpers/createTextareaField.js";
 import { createSubmitButton } from "../helpers/createSubmitButton.js";
 import { handleCreatePostSubmit } from "../helpers/handleFormSubmit.js";
 

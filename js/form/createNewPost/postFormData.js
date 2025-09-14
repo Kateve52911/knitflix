@@ -21,7 +21,6 @@ export function createPostFromFormData(formData) {
     throw new Error("Image alt text is required");
   }
 
-  // Basic URL validation
   if (!imgSrc.startsWith("http://") && !imgSrc.startsWith("https://")) {
     throw new Error("Image URL must start with http:// or https://");
   }
