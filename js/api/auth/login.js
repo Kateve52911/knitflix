@@ -1,13 +1,16 @@
 // import { API_URL_AUTH, API_URL_BASE, API_URL_LOGIN } from "../constants.js";
 // import { saveKey } from "../../utils/storage/saveKey.js";
 
-// export async function login(email, password) {
-//   const response = await fetch(API_URL_BASE + API_URL_AUTH + API_URL_LOGIN, {
+// export async function loginUser(email, password) {
+//   const response = await fetch(API_BASE_URL + API_AUTH + API_LOGIN, {
 //     headers: {
 //       "Content-Type": "application/json",
 //     },
 //     method: "POST",
 //     body: JSON.stringify({ email, password }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
 //   });
 
 //   if (response.ok) {
@@ -46,8 +49,19 @@ export async function loginUser(userDetails) {
     const json = await response.json();
 
     const accessToken = json.data.accessToken;
-    console.log(accessToken);
+    const userProfile = json.data;
+
+    console.log("=== SAVING USER DEBUG ===");
+    console.log("userProfile before saving:", userProfile);
+    console.log("typeof userProfile:", typeof userProfile);
+    console.log("JSON.stringify(userProfile):", JSON.stringify(userProfile));
+    console.log("========================");
+
     saveKey("accessToken", accessToken);
+    saveKey("currentUser", userProfile);
+
+    console.log("Login successful:", userProfile);
+    console.log(userProfile);
     console.log(json);
   } catch (error) {
     console.log(error);

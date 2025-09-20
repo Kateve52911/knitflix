@@ -1,7 +1,7 @@
 import { loadKey } from "../../utils/storage/loadKey.js";
 import { API_BASE_URL, API_KEY, API_USERS } from "../general/constants.js";
 
-export async function getUsers() {
+export async function fetchUsers() {
   try {
     const accessToken = loadKey("accessToken");
 
@@ -27,5 +27,3 @@ export async function getUsers() {
     console.log(error);
   }
 }
-
-getUsers();

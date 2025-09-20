@@ -1,3 +1,10 @@
+/**
+ * sorts posts by their reactions/comments
+ *
+ * @param {object[]} posts
+ * @returns
+ */
+
 export function sortPostsByReactions(posts) {
   console.log("🔄 Sorting by reactions");
 

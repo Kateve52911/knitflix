@@ -2,7 +2,13 @@ import { filterPostsByTag } from "./filterFunctions.js";
 import { searchPostsByTerm } from "./searchFunctions.js";
 import { sortPosts } from "./sortFunctions.js";
 
-export function filterAndSortPosts(posts, selectedTag, sortMethod, searchTerm) {
+export function filterAndSortPosts(
+  posts,
+  selectedTag,
+  sortMethod,
+  searchTerm,
+  authorName
+) {
   let processedPosts = [...posts];
   processedPosts = filterPostsByTag(processedPosts, selectedTag);
 
@@ -19,7 +25,10 @@ export function filterAndSortPosts(posts, selectedTag, sortMethod, searchTerm) {
     }
   }
 
-  processedPosts = sortPosts(processedPosts, sortMethod);
+  if (authorName) {
+    processedPosts = searchPostsByAuthor(processedPosts, authorName);
+  }
 
+  processedPosts = sortPosts(processedPosts, sortMethod);
   return processedPosts;
 }

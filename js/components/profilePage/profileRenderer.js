@@ -1,48 +1,72 @@
-// import { posts } from "../../utils/source/posts.js";
+import { loadKey } from "../../utils/storage/loadKey.js";
+import { fetchUserProfile } from "../../api/users/getUserProfile.js"; // Add this import
 
-// export function renderUserProfile(user) {
-//   setPageTitle(user.username);
-//   populateProfileInfo(user);
-//   setProfileImage(user);
-//   updateUserStats(user);
-// }
+export async function renderUserProfile() {
+  const currentUser = loadKey("currentUser");
 
-// function setPageTitle(username) {
-//   document.title = `${username} | Knitflix`;
-// }
+  if (!currentUser) {
+    console.error("No user found in storage");
+    return;
+  }
 
-// function populateProfileInfo(user) {
-//   document.querySelectorAll(".profile-username").forEach((element) => {
-//     element.textContent = user.username;
-//   });
+  if (!currentUser.name) {
+    console.error("No name found in currentUser object");
+    return;
+  }
 
-//   document.querySelectorAll(".profile-name").forEach((element) => {
-//     element.textContent = user.name;
-//   });
+  const userProfileWithStats = await fetchUserProfile(currentUser.name);
 
-//   document.querySelectorAll(".profile-description").forEach((element) => {
-//     element.textContent = user.description;
-//   });
-// }
+  if (!userProfileWithStats) {
+    console.error("Failed to fetch user profile with stats");
+    return;
+  }
 
-// function setProfileImage(user) {
-//   document.querySelectorAll(".profile-avatar").forEach((element) => {
-//     element.src = user.avatarScr;
-//     element.alt = user.avatarAlt || `${user.username}'s profile picture`;
-//   });
-// }
+  setPageTitle(userProfileWithStats.name);
+  populateProfileInfo(userProfileWithStats);
+  setProfileImage(userProfileWithStats);
+  updateUserStats(userProfileWithStats);
+}
 
-// function updateUserStats(user) {
-//   const userPosts = posts.filter((posts) => posts.userId === user.id);
-//   document.querySelectorAll(".profile-followers").forEach((element) => {
-//     element.textContent = user.followers;
-//   });
+function setPageTitle(name) {
+  document.title = `${name} | Knitflix`;
+}
 
-//   document.querySelectorAll(".profile-following").forEach((element) => {
-//     element.textContent = user.following;
-//   });
+function populateProfileInfo(user) {
+  document.querySelectorAll(".profile-username").forEach((element) => {
+    element.textContent = user.name;
+  });
 
-//   document.querySelectorAll(".profile-posts").forEach((element) => {
-//     element.textContent = userPosts.length.toString();
-//   });
-// }
+  document.querySelectorAll(".profile-name").forEach((element) => {
+    element.textContent = user.name;
+  });
+
+  document.querySelectorAll(".profile-description").forEach((element) => {
+    element.textContent = user.bio || "No bio available";
+  });
+}
+
+function setProfileImage(user) {
+  document.querySelectorAll(".profile-avatar").forEach((element) => {
+    if (user.avatar && user.avatar.url) {
+      element.src = user.avatar.url;
+      element.alt = user.avatar.alt || `${user.name}'s profile picture`;
+    } else {
+      element.src = "/images/default-avatar.jpg"; // Adjust path as needed
+      element.alt = `${user.name}'s profile picture`;
+    }
+  });
+}
+
+function updateUserStats(user) {
+  document.querySelectorAll(".profile-followers").forEach((element) => {
+    element.textContent = user._count?.followers || user.followers || "0";
+  });
+
+  document.querySelectorAll(".profile-following").forEach((element) => {
+    element.textContent = user._count?.following || user.following || "0";
+  });
+
+  document.querySelectorAll(".profile-posts").forEach((element) => {
+    element.textContent = user._count?.posts || user.posts?.length || "0";
+  });
+}
