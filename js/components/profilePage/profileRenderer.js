@@ -57,16 +57,35 @@ function setProfileImage(user) {
   });
 }
 
+// function updateUserStats(user) {
+//   document.querySelectorAll(".profile-followers").forEach((element) => {
+//     element.textContent = user._count?.followers || user.followers || "0";
+//   });
+
+//   document.querySelectorAll(".profile-following").forEach((element) => {
+//     element.textContent = user._count?.following || user.following || "0";
+//   });
+
+//   document.querySelectorAll(".profile-posts").forEach((element) => {
+//     element.textContent = user._count?.posts || user.posts?.length || "0";
+//   });
+// }
+
 function updateUserStats(user) {
   document.querySelectorAll(".profile-followers").forEach((element) => {
-    element.textContent = user._count?.followers || user.followers || "0";
+    const followerCount =
+      user._count?.followers ?? user.followers?.length ?? "0";
+    element.textContent = followerCount;
   });
 
   document.querySelectorAll(".profile-following").forEach((element) => {
-    element.textContent = user._count?.following || user.following || "0";
+    const followingCount =
+      user._count?.following ?? user.following?.length ?? "0";
+    element.textContent = followingCount;
   });
 
   document.querySelectorAll(".profile-posts").forEach((element) => {
-    element.textContent = user._count?.posts || user.posts?.length || "0";
+    const postCount = user._count?.posts ?? user.posts?.length ?? "0";
+    element.textContent = postCount;
   });
 }

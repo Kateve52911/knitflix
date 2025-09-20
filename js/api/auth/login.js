@@ -51,12 +51,6 @@ export async function loginUser(userDetails) {
     const accessToken = json.data.accessToken;
     const userProfile = json.data;
 
-    console.log("=== SAVING USER DEBUG ===");
-    console.log("userProfile before saving:", userProfile);
-    console.log("typeof userProfile:", typeof userProfile);
-    console.log("JSON.stringify(userProfile):", JSON.stringify(userProfile));
-    console.log("========================");
-
     saveKey("accessToken", accessToken);
     saveKey("currentUser", userProfile);
 

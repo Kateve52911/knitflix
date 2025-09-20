@@ -21,7 +21,7 @@ export async function fetchSinglePost(postId) {
       },
     };
 
-    const URL = `${API_BASE_URL}${API_POSTS}/${postId}?_author=true`;
+    const URL = `${API_BASE_URL}${API_POSTS}/${postId}?_author=true&_comments=true`;
     const response = await fetch(URL, fetchOptions);
     const json = await response.json();
     console.log("Point of interest");
