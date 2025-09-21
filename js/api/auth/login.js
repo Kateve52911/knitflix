@@ -42,12 +42,18 @@ export async function loginUser(userDetails) {
     );
 
     const json = await response.json();
-    console.log(json);
-    const accessToken = json.data.accessToken;
-    const userProfile = json.data;
 
-    saveKey("accessToken", accessToken);
-    saveKey("currentUser", userProfile);
+    if (response.ok && json.data) {
+      const accessToken = json.data.accessToken;
+      const userProfile = json.data;
+
+      saveKey("accessToken", accessToken);
+      saveKey("currentUser", userProfile);
+
+      window.location.href = "/user/feed/index.html";
+    } else {
+      throw new Error(json.message || "Login failed");
+    }
   } catch (error) {
     console.log(error);
   }
