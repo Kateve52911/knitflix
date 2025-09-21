@@ -1,13 +1,27 @@
-import { posts } from "../utils/source/posts.js";
-import { renderSinglePost } from "./renderSinglePost.js";
+import { renderSinglePost } from "./card/renderSinglePost.js";
+import { fetchPosts } from "/js/api/posts/getPosts.js";
 
-function renderAllPosts(posts) {
-  const allPostsContainer = document.getElementById("all-posts-container");
-  posts.forEach((post) => {
-    const postContainer = renderSinglePost(post);
+export async function renderAllPosts(containerId = "all-posts-container") {
+  try {
+    const postsData = await fetchPosts();
 
-    allPostsContainer.appendChild(postContainer);
-  });
+    const allPostsContainer = document.getElementById(containerId);
+    if (!allPostsContainer) {
+      console.error(`Container ${containerId} not found`);
+      return;
+    }
+
+    allPostsContainer.innerHTML = "";
+
+    if (postsData && postsData.length > 0) {
+      postsData.forEach((post) => {
+        const postContainer = renderSinglePost(post);
+        allPostsContainer.appendChild(postContainer);
+      });
+    } else {
+      allPostsContainer.innerHTML = "<p>No posts available</p>";
+    }
+  } catch (error) {
+    console.error("Error in renderAllPosts:", error);
+  }
 }
-
-renderAllPosts(posts);

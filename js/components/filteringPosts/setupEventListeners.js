@@ -1,10 +1,19 @@
 import { elements } from "./domElements.js";
-import { posts } from "../../utils/source/posts.js";
 import { filterAndSortPosts } from "./filterAndSortPosts.js";
 import { renderFilteredPosts } from "./renderFilteredPosts.js";
 
-export function setupEventListeners() {
+export function setupEventListeners(posts) {
   const { tagFilter, sortSelect, searchInput, postsContainer } = elements;
+
+  if (!tagFilter || !sortSelect || !searchInput || !postsContainer) {
+    console.error("Filter elements not found in the DOM:", {
+      tagFilter: !!tagFilter,
+      sortSelect: !!sortSelect,
+      searchInput: !!searchInput,
+      postsContainer: !!postsContainer,
+    });
+    return;
+  }
 
   function updatePosts() {
     const selectedTag = tagFilter.value;
@@ -17,7 +26,6 @@ export function setupEventListeners() {
       sortMethod,
       searchTerm
     );
-
     renderFilteredPosts(postsToRender, postsContainer);
   }
 

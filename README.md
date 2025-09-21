@@ -6,13 +6,14 @@
 
 I wanted to create a social media platform for knitters. It is meant to be a page where you can post you own projects and yarn you have in your yarn stash and project plans you might have.
 
-It is a project to showcase my skills in JS, HTML and Tailwind CSS.
+It is a project to showcase my skills in JS, HTML, Tailwind CSS and interaction with the Noroff API.
 
 #### Features:
 
-- Personalised profile page when user logs inn (use info in users.js to see this).
-- You can add you own posts to the page using the button for creating a new post (so far it only works until you refresh the page).
-- Filter, sort and search options in on the feed page.
+- Register an account with the API and then use that account to log in to the app.
+- Personalised profile page when user logs inn.
+- You can add you own posts to the page using the button for creating a new post, you can edit your posts and delete your posts.
+- You can filter, sort and search options in on the feed page.
 
 ## Built With
 
@@ -73,5 +74,3 @@ When contributing please follow the code of conduct found [here](docs/CODE_OF_CO
 Profile images are sourced from [unsplash](https://www.unsplash.com/)
 
 Icon in logo is from [iconfinder](https://www.iconfinder.com/)
-
-All images for the projects in the feed are my owm.
