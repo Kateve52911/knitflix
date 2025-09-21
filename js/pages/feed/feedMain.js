@@ -27,16 +27,16 @@ async function initializePage() {
 
     await initializeFilterSystem();
   } catch (error) {
-    console.error("💥 Error initializing page:", error);
+    console.error("Error initializing page:", error);
   }
 }
 
-async function refreshPostsAfterAction() {
+export async function refreshPostsAfterAction() {
   try {
     await refreshFilterSystem();
     await renderAllPosts();
   } catch (error) {
-    console.error("💥 Error refreshing posts:", error);
+    console.error("Error refreshing posts:", error);
   }
 }
 
@@ -79,4 +79,4 @@ document.addEventListener("click", async (event) => {
   }
 });
 
-export { refreshPostsAfterAction };
+//export { refreshPostsAfterAction };

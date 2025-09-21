@@ -1,10 +1,32 @@
 import { API_AUTH, API_REGISTER, API_BASE_URL } from "../general/constants.js";
 
 const registerForm = document.querySelector("#register-form");
-console.log(registerForm);
+
+/**
+ * Registers a new user account
+ * @param {object} userDetails - user registration details
+ * @param {string} userDetails.email - user's email address
+ * @param {string} userDetails.password - user's password
+ * @param {string} userDetails.name - user's name
+ * @returns {Promise<object>} registration response data from the server
+ * @example
+ * ```js
+ * const newUser = {
+ *  email: "newUser123@stud.noroff.no",
+ *  password = "newUser123",
+ *  name: "John Doe"
+ * };
+ *
+ * try {
+ *  const result = await registerUser(newUser);
+ *  console.log("Registration successful!", result);
+ * } catch (error) {
+ * console.error("Registration failed", error)
+ * }
+ * ```
+ */
 
 export async function registerUser(userDetails) {
-  console.debug(userDetails);
   try {
     const fetchOptions = {
       method: "POST",
@@ -17,7 +39,8 @@ export async function registerUser(userDetails) {
       API_BASE_URL + API_AUTH + API_REGISTER,
       fetchOptions
     );
-    console.log(response);
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.log(error);
   }

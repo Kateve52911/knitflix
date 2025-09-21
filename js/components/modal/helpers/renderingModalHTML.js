@@ -12,7 +12,6 @@ export function renderViewModal(postData) {
   const author = document.createElement("h3");
   author.innerHTML = postData.data.author.name;
   author.className = "text-text-light font-body text-center font text-s";
-  console.log(author);
 
   const dateCreated = document.createElement("p");
   dateCreated.innerHTML = postData.data.created;

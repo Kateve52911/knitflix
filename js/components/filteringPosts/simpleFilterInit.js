@@ -15,7 +15,7 @@ export async function initializeFilterSystem() {
     const posts = await setupFilterSystemWithPosts();
     return posts;
   } catch (error) {
-    console.error("💥 Error initializing filter system:", error);
+    console.error("Error initializing filter system:", error);
     return [];
   }
 }
@@ -25,7 +25,7 @@ export async function refreshFilterSystem() {
     const posts = await setupFilterSystemWithPosts();
     return posts;
   } catch (error) {
-    console.error("💥 Error refreshing filter system:", error);
+    console.error("Error refreshing filter system:", error);
     return [];
   }
 }

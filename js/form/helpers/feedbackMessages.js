@@ -43,11 +43,9 @@ function autoRemoveSuccessMessage(message) {
 }
 
 export function showEditSuccessMessage() {
-  // Create success message that appears at the top of the page, not in posts container
   const body = document.body;
   const successMessage = createEditSuccessElement();
 
-  // Add to top of page instead of posts container
   if (body.firstChild) {
     body.insertBefore(successMessage, body.firstChild);
   } else {

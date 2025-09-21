@@ -6,7 +6,7 @@ export function setupEventListeners(posts) {
   const { tagFilter, sortSelect, searchInput, postsContainer } = elements;
 
   if (!tagFilter || !sortSelect || !searchInput || !postsContainer) {
-    console.error("❌ Filter elements not found in the DOM:", {
+    console.error("Filter elements not found in the DOM:", {
       tagFilter: !!tagFilter,
       sortSelect: !!sortSelect,
       searchInput: !!searchInput,
@@ -37,6 +37,4 @@ export function setupEventListeners(posts) {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(updatePosts, 300);
   });
-
-  console.log("✅ Event listeners setup complete"); // Optional
 }

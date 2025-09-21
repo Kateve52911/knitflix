@@ -5,8 +5,6 @@ export async function fetchUsers() {
   try {
     const accessToken = loadKey("accessToken");
 
-    console.log(accessToken);
-
     const fetchOptions = {
       method: "GET",
       headers: {
@@ -16,12 +14,9 @@ export async function fetchUsers() {
       },
     };
 
-    console.log(fetchOptions);
-
     const response = await fetch(API_BASE_URL + API_USERS, fetchOptions);
-    console.log(response);
+
     const json = await response.json();
-    console.log(json);
     return json.data;
   } catch (error) {
     console.log(error);

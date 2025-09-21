@@ -1,37 +1,31 @@
-// import { API_URL_AUTH, API_URL_BASE, API_URL_LOGIN } from "../constants.js";
-// import { saveKey } from "../../utils/storage/saveKey.js";
-
-// export async function loginUser(email, password) {
-//   const response = await fetch(API_BASE_URL + API_AUTH + API_LOGIN, {
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     method: "POST",
-//     body: JSON.stringify({ email, password }),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-
-//   if (response.ok) {
-//     const { accessToken, ...profile } = (await response.json()).data;
-//     saveKey("token", accessToken);
-//     saveKey("profile", profile);
-//     console.log("Login successful:", profile);
-
-//     return profile;
-//   }
-
-//   throw new Error("Could not login to the account");
-// }
-
 import { saveKey } from "../../utils/storage/saveKey.js";
 import { API_AUTH, API_BASE_URL, API_LOGIN } from "../general/constants.js";
 
 const loginForm = document.querySelector("#login-form");
 
-console.log(loginForm);
-
+/**
+ * Logs in user with their credentials and saves authentication data
+ * @param {object} userDetails - user login credentials
+ * @param {string} userDetails.email - user's email address
+ * @param {string} userDetails.password - user's password
+ * @returns {Promise<void>} resolves when login is complete, rejects on error
+ *
+ * @example
+ * ```js
+ * const credentials = {
+ *  email = "sol@stud.noroff.no",
+ *  password = "sol12345"
+ * };
+ *
+ * try {
+ * await loginUser(credentials);
+ * // User is now logged in, tokens saved to storage
+ * } catch (error){
+ * // handle login error
+ * console.error("Login failed:", error)
+ * };
+ *```
+ */
 export async function loginUser(userDetails) {
   try {
     const fetchOptions = {
@@ -46,17 +40,14 @@ export async function loginUser(userDetails) {
       API_BASE_URL + API_AUTH + API_LOGIN,
       fetchOptions
     );
-    const json = await response.json();
 
+    const json = await response.json();
+    console.log(json);
     const accessToken = json.data.accessToken;
     const userProfile = json.data;
 
     saveKey("accessToken", accessToken);
     saveKey("currentUser", userProfile);
-
-    console.log("Login successful:", userProfile);
-    console.log(userProfile);
-    console.log(json);
   } catch (error) {
     console.log(error);
   }

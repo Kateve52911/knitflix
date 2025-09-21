@@ -9,7 +9,6 @@ export async function showPostModal(postId) {
       createModal();
       return;
     }
-
     const modalContent = document.getElementById("modal-content");
 
     if (modalContent) {

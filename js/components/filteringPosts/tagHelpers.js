@@ -24,7 +24,7 @@ export function createTagOption(tag) {
 
 export function populateTagFilter(posts, tagFilterElement) {
   if (!tagFilterElement) {
-    console.error("❌ Tag filter element not found");
+    console.error("Tag filter element not found");
     return;
   }
 
@@ -36,6 +36,4 @@ export function populateTagFilter(posts, tagFilterElement) {
     const option = createTagOption(tag);
     tagFilterElement.appendChild(option);
   });
-
-  console.log("✅ Tag filter populated with", uniqueTags.length, "tags");
 }

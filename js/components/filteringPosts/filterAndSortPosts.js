@@ -17,10 +17,7 @@ export function filterAndSortPosts(
     if (searchResult && Array.isArray(searchResult)) {
       processedPosts = searchResult;
     } else {
-      console.error(
-        "❌ Search function returned invalid result:",
-        searchResult
-      );
+      console.error("Search function returned invalid result:", searchResult);
       processedPosts = [];
     }
   }
